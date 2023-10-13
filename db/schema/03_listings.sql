@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS listings CASCADE;
+
+CREATE TABLE listings (
+  id SERIAL PRIMARY KEY NOT NULL,
+  seller_id INTEGER REFERENCES users(id),
+  title VARCHAR(255) NOT NULL,
+  price INTEGER NOT NULL DEFAULT 0,
+  description TEXT NOT NULL,
+  date_listed DATE NOT NULL,
+  is_active BOOLEAN NOT NULL DEFAULT TRUE
+);

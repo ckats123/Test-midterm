@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS reviews CASCADE;
+
+CREATE TABLE reviews (
+  id SERIAL PRIMARY KEY NOT NULL,
+  transaction_id INTEGER REFERENCES transactions(id) ON DELETE CASCADE,
+  rating SMALLINT NOT NULL,
+  message TEXT
+);
