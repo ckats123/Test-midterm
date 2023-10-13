@@ -13,8 +13,6 @@ nav {
   height: 15vh;
   background-color: #398378;
   color: white;
-  background-image: url(./images/logo.png);
-  background-size: cover;
 }
 
 #left-nav {
@@ -86,6 +84,23 @@ main > #listings-button {
   margin: 2% 0;
 }
 
+.feature > .profile-container {
+  border: 	#C0C0C0 4px solid;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+
+.feature > .hire-me {
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 8px;
+}
+
 footer {
   background-color: #398378;
   width: 100vw;
@@ -93,6 +108,16 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main > #listings-button {
+  margin: 4% 0%;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  color: white;
+  font-size: 2rem;
+  background-color: #8FBC8F;
 }
 
 footer > .logo {
