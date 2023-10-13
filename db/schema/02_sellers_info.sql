@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS sellers_info CASCADE;
+
+CREATE TABLE sellers_info (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  photo_url VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL
+);
