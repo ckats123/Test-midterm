@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="/styles/listings.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+  
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
   
@@ -25,7 +29,7 @@
       <span class="website-name">programmer.com</span>
     </div>
     <div id="right-nav">
-      <div id="search"><span>Search</span><!--Get request here for search bar--><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div id="search"><span>Search  </span><!--Get request here for search bar--><i class="fa-solid fa-magnifying-glass"></i></div>
       <div id="create-listing">Create Listing</div>
       <div id="listings">Listings</div>
       <div id="favorites">Favorites</div>
@@ -45,8 +49,8 @@
 
     <main>
         <section id="search-listings">
-            <h2>Search</h2>
-            <form>
+            <h2 id="searchbar-title">Search</h2>
+            <form action="" method="">
               <label for="search-listings">Search:</label>
               <input type="search" id="searchbar-listings" name="searchbar-listings" placeholder="Search service listings here...">
             </form>
@@ -54,8 +58,8 @@
         </section>
 
         <section id="listings-results">
-            <h2>Section 2</h2>
-            <p>This is the content of section 2.</p>
+            <h2>listings results section</h2>
+            <p>search results for listings will render here</p>
         </section>
     </main>
     <aside>

@@ -57,7 +57,7 @@ app.use('/create-listing', createListingRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('listings');
 });
 
 app.listen(PORT, () => {
