@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
+    <div id="left-nav">
+      <img class="logo" src="./images/logo.png" alt="profile image">
+      <span class="website-name">programmer.com</span>
+    </div>
+    <div id="right-nav">
+      <div id="search">
+        <form action="/search" method="get">
+          <label for="search">Search:</label>
+          <input type="text" id="search" required>
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <a href="/create-listing" id="create-listing">Create Listing</a>
+      <a href="/listings" id="listings">Listings</a>
+      <a href="/favorites" id="favorites">Favorites</a>
+      <a href="/login" id="login">Login</a>
+      <a href="/login" id="join">Join</a>
+      <a href="/account" id="account">Account</a>
+
+    </div>
+  </nav>
+  <header>
+    <h1>Hire expert Programmers for any job</h1>
+    <img src="./images/home.png" alt="image of woman on computer">
+  </header>
+  <main>
+    <!--Logic for favorites list-->
+  </main>
+  <footer>
+    <img class="logo" src="./images/logo.png" alt="profile image">
+    <p>Something <i class="fa-solid fa-fish" style="color: #1e3050;"></i> ? Let us know: report@programmer.com</p>
+  </footer>
+</body>
+</html>
