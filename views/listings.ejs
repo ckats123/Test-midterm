@@ -51,21 +51,22 @@
         <section id="search-listings">
             <h2 id="searchbar-title">Search</h2>
             <form action="" method="">
-              <label for="search-listings">Search:</label>
               <input type="search" id="searchbar-listings" name="searchbar-listings" placeholder="Search service listings here...">
+
+              <div class="price-range-slider">
+                <input type="range" min="0" max="1000" value="0" step="10" id="price-slider">
+                <span id="price-display">$0</span>
+              </div>
             </form>
 
         </section>
 
-        <section id="listings-results">
+        <section id="listings-search-results">
             <h2>listings results section</h2>
             <p>search results for listings will render here</p>
         </section>
     </main>
-    <aside>
-        <h2>Sidebar</h2>
-        <p>This is the sidebar content.</p>
-    </aside>
+  
     <footer>
       <img class="logo" src="./images/logo.png" alt="profile image">
     </footer>
