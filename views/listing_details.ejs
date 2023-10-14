@@ -6,12 +6,44 @@
   <title>Document</title>
 </head>
 <body>
-  <p>Listing id: <%= listing.id %></p>
-  <p>Listing seller id: <%= listing.seller_id %></p>
-  <p>Listing title: <%= listing.title %></p>
-  <p>Listing price: <%= listing.price %></p>
-  <p>Listing description: <%= listing.description %></p>
-  <p>Listing date listed: <%= listing.date_listed %></p>
-  <p>Listing active?: <%= listing.is_active %></p>
+  <nav>
+    <div id="left-nav">
+      <img class="logo" src="./images/logo.png" alt="profile image">
+      <span class="website-name">programmer.com</span>
+    </div>
+    <div id="right-nav">
+      <div id="search">
+        <form action="/search" method="get">
+          <label for="search">Search:</label>
+          <input type="text" id="search" required>
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <a href="create-listing.ejs" id="create-listing">Create Listing</a>
+      <a href="listings.ejs" id="listings">Listings</a>
+      <a href="favorites.ejs" id="favorites">Favorites</a>
+      <a href="login.ejs" id="login">Login</a>
+      <a href="login.ejs" id="join">Join</a>
+      <a href="account.ejs" id="account">Account</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Hire expert Programmers for any job</h1>
+    <img src="./images/home.png" alt="image of woman on computer">
+  </header>
+  <main>
+    <p>Listing id: <%= listing.id %></p>
+    <p>Listing seller id: <%= listing.seller_id %></p>
+    <p>Listing title: <%= listing.title %></p>
+    <p>Listing price: <%= listing.price %></p>
+    <p>Listing description: <%= listing.description %></p>
+    <p>Listing date listed: <%= listing.date_listed %></p>
+    <p>Listing active?: <%= listing.is_active %></p>
+  </main>
+  <footer>
+    <img class="logo" src="./images/logo.png" alt="profile image">
+    <p>Something <i class="fa-solid fa-fish" style="color: #1e3050;"></i> ? Let us know: report@programmer.com</p>
+  </footer>
 </body>
 </html>
