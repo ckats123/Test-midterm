@@ -28,4 +28,20 @@ router.get("/:listing_id", (req, res) => {
     });
 });
 
+
+
+// moved kenny's ejs logic to this file, as it was crashing listings.ejs, even when commented out 
+
+// <% listings.forEach(listing => { %>
+//   <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+//     <img src = <%= listing.photo_url %>>
+//     <h2><%= listing.title %></h2>
+//     <p>Price: $<%= listing.price %></p>
+//     <p>Description: <%= listing.description %></p>
+//     <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+//     <p>Date Listed: <%= listing.date_listed %></p>
+//     <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+//   </div>
+// <% }); %>
+
 module.exports = router;
