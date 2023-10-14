@@ -32,6 +32,7 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
+const listingApiRoutes = require('./routes/listings-api');
 const loginRoutes = require('./routes/login');
 const listingsRoutes = require('./routes/listings');
 const favoritesRoutes = require('./routes/favorites');
@@ -45,6 +46,7 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 
+app.use('/api/listings', listingApiRoutes);
 app.use('/login', loginRoutes);
 app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
