@@ -1,1 +1,1 @@
-SELECT * FROM transactions WHERE seller_id = user_id;
+SELECT * FROM transactions WHERE buyer_id = user_id;
