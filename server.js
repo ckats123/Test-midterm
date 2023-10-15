@@ -5,6 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -25,6 +26,7 @@ app.use(
   })
 );
 app.use(express.static('public'));
+app.use(cookieParser());
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -34,6 +36,7 @@ const usersRoutes = require('./routes/users');
 
 const listingApiRoutes = require('./routes/listings-api');
 const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout');
 const listingsRoutes = require('./routes/listings');
 const favoritesRoutes = require('./routes/favorites');
 const accountRoutes = require('./routes/account');
@@ -48,6 +51,7 @@ app.use('/users', usersRoutes);
 
 app.use('/api/listings', listingApiRoutes);
 app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
 app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
