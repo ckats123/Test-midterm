@@ -4,7 +4,7 @@ const router = express.Router();
 const users = require("../db/queries/users");
 
 router.get("/", (req, res) => {
-  res.render("login");
+  res.render("login_register");
 });
 
 router.post("/", (req, res) => {
