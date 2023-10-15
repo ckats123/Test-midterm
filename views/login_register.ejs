@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+      <title>Listings page</title>
+      
+      <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+      <link rel="stylesheet" href="/vendor/border-box.css" />
+      <link rel="stylesheet" href="/styles/login_register.css" />
+      <link rel="stylesheet" href="/styles/layout.css" />
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+    
+      <script src="/vendor/jquery-3.0.0.js"></script>
+      <script defer src="/scripts/app.js"></script>
+    
+      <!-- Font Awesome -->
+      <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
+  </head>
+<body>
+  <nav>
+    <div id="left-nav">
+      <img class="logo" src="./images/logo.png" alt="profile image">
+      <span class="website-name">programmer.com</span>
+    </div>
+    <div id="right-nav">
+      <div id="search"><span>Search  </span><!--Get request here for search bar--><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div id="create-listing">Create Listing</div>
+      <div id="listings">Listings</div>
+      <div id="favorites">Favorites</div>
+      <div id="login">Login</div>
+      <div id="join">Join</div>
+      <div id="account">Account</div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>You should totally Sign-Up! <br> 
+        It will change your life. <br>
+    </h1>
+  </header>
+
+  <div id="forms-container">
+    <section id="sign-up">
+      <h1>Sign Up/ Register!</h1>
+      <form action="process_signup.php" method="post">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+  
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+         
+          <button id="sign-up-button" type="submit">Sign Up</button>
+    </section>
+  
+    <section id="login">
+      <h1>Login</h1>
+      <form action="process_signup.php" method="post">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+  
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+         
+          <button id="sign-up-button" type="submit">Login</button>
+    </section>
+  </div>
+    <h1>Hello, World!</h1>
+    <p>This is a simple HTML5 boilerplate.</p>
+</body>
+</html>
