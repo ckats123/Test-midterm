@@ -30,9 +30,9 @@
     </div>
     <div id="right-nav">
       <div id="search">
-        <form action="/search" method="get">
+        <form action="/listings" method="GET">
           <label for="search">Search:</label>
-          <input type="text" id="search" required>
+          <input type="text" id="search" name="search-term" required>
           <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
@@ -53,12 +53,13 @@
     <main>
         <section id="search-listings">
             <h2 id="searchbar-title">Search</h2>
-            <form action="" method="">
-              <input type="search" id="searchbar-listings" name="searchbar-listings" placeholder="Search service listings here...">
-
+            <form action="/listings" method="GET">
+              <input type="search" id="search-term" name="search-term" placeholder="Search service listings here...">
               <div class="price-range-slider">
-                <input type="range" min="0" max="1000" value="0" step="10" id="price-slider">
-                <span id="price-display">$0</span>
+                <p><label for="price-slider">Maximum Price:</label></p>
+                <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
+                oninput="document.getElementById('price-display').textContent = '$' + this.value;">
+                <span id="price-display">$1000</span>
               </div>
             </form>
 
