@@ -26,17 +26,24 @@
 <body>
   <nav>
     <div id="left-nav">
-      <img class="logo" src="./images/logo.png" alt="profile image">
+      <a href="/" id="home"><img class="logo" src="./images/logo.png" alt="profile image"></a>
       <span class="website-name">programmer.com</span>
     </div>
     <div id="right-nav">
-      <div id="search"><span>Search</span><!--Get request here for search bar--><i class="fa-solid fa-magnifying-glass"></i></div>
-      <div id="create-listing">Create Listing</div>
-      <div id="listings">Listings</div>
-      <div id="favorites">Favorites</div>
-      <div id="login">Login</div>
-      <div id="join">Join</div>
-      <div id="account">Account</div>
+      <div id="search">
+        <form action="/search" method="get">
+          <label for="search">Search:</label>
+          <input type="text" id="search" required>
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <a href="/create-listing" id="create-listing">Create Listing</a>
+      <a href="/listings" id="listings">Listings</a>
+      <a href="/favorites" id="favorites">Favorites</a>
+      <a href="/login" id="login">Login</a>
+      <a href="/login" id="join">Join</a>
+      <a href="/account" id="account">Account</a>
+
     </div>
   </nav>
   <header>
@@ -50,21 +57,21 @@
           <img src="./images/female-1.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
       <div class="feature">
         <span class="profile-container">
           <img src="./images/female-2.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
       <div class="feature">
         <span class="profile-container">
           <img src="./images/male-3.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
     </div>
     <div id="bottom-row">
@@ -73,24 +80,24 @@
           <img src="./images/male-2.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
       <div class="feature">
         <span class="profile-container">
           <img src="./images/female-4.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
       <div class="feature">
         <span class="profile-container">
           <img src="./images/male-1.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
-        <button class="hire-me">Hire Me!</button>
+        <button type="submit" class="hire-me">Hire Me!</button>
       </div>
     </div>
-    <button id="listings-button">Find your programmer today!</button>
+    <button type="submit" id="listings-button">Find your programmer today!</button>
   </main>
   <footer>
     <img class="logo" src="./images/logo.png" alt="profile image">
