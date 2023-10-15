@@ -14,4 +14,10 @@ const getUserPassword = (email) => {
     });
 };
 
-module.exports = { getUsers, getUserPassword };
+const getSellerAccountInfo = (email) => {
+  return db
+  .query(
+    "SELECT * FROM users JOIN sellers_info ON users.id = sellers_info.user_id WHERE email = $1;", [email]);
+}
+
+module.exports = { getUsers, getUserPassword, getSellerAccountInfo };
