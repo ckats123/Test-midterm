@@ -14,6 +14,8 @@ router.post("/", (req, res) => {
       console.log(`Found user!`);
       if (req.body.email === data.email && req.body.password === data.password) {
         console.log('Valid credentials! Logging in.');
+        res.cookie('email', data.email);
+        res.redirect('/');
       } else {
         console.log('Invalid credentials!');
       }
