@@ -33,7 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
 const listingApiRoutes = require('./routes/listings-api');
-const loginRoutes = require('./routes/login');
+const loginRoutes = require('./routes/login_register');
 const listingsRoutes = require('./routes/listings');
 const favoritesRoutes = require('./routes/favorites');
 const accountRoutes = require('./routes/account');
@@ -47,7 +47,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 
 app.use('/api/listings', listingApiRoutes);
-app.use('/login', loginRoutes);
+app.use('/login_register', loginRoutes);
 app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
@@ -59,7 +59,7 @@ app.use('/create-listing', createListingRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('login_register');
+  res.render('index');
 });
 
 app.listen(PORT, () => {

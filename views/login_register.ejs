@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="/vendor/border-box.css" />
       <link rel="stylesheet" href="/styles/login_register.css" />
       <link rel="stylesheet" href="/styles/layout.css" />
+      
     
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,19 +23,27 @@
       <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
   </head>
 <body>
-  <nav>
+
+ <nav>
     <div id="left-nav">
-      <img class="logo" src="./images/logo.png" alt="profile image">
+      <a href="/" id="home"><img class="logo" src="./images/logo.png" alt="profile image"></a>
       <span class="website-name">programmer.com</span>
     </div>
     <div id="right-nav">
-      <div id="search"><span>Search  </span><!--Get request here for search bar--><i class="fa-solid fa-magnifying-glass"></i></div>
-      <div id="create-listing">Create Listing</div>
-      <div id="listings">Listings</div>
-      <div id="favorites">Favorites</div>
-      <div id="login">Login</div>
-      <div id="join">Join</div>
-      <div id="account">Account</div>
+      <div id="search">
+        <form action="/search" method="get">
+          <label for="search">Search:</label>
+          <input type="text" id="search" required>
+          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <a href="/create-listing" id="create-listing">Create Listing</a>
+      <a href="/listings" id="listings">Listings</a>
+      <a href="/favorites" id="favorites">Favorites</a>
+      <a href="/login_register" id="login">Login</a>
+      <a href="/login_register" id="join">Join</a>
+      <a href="/account" id="account">Account</a>
+
     </div>
   </nav>
 
@@ -46,20 +55,39 @@
 
   <div id="forms-container">
     <section id="sign-up">
-      <h1>Sign Up/ Register!</h1>
-      <form action="process_signup.php" method="post">
+      <h1>Register!</h1>
+      <!-- registration form  -->
+      <form action="/register" method="POST">  registration form
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
   
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required>
-         
+          
+          <br>
+          <hr>
+
+          <label for="seller">Are you a seller?</label>
+          <br>
+          <input type="checkbox" id="seller" name="seller" value="true">
+          <br>
+          
+          <label for="location">Location (seller only) </label>
+          <br>
+          <input type="text" id="location" name="location" placeholder="location">
+
+          <label for="image">Profile-image URL (seller only)</label>
+          <br>
+          <input type="text" id="image" name="image" placeholder="image link-URL">
+          
           <button id="sign-up-button" type="submit">Sign Up</button>
+      </form>
     </section>
   
     <section id="login">
       <h1>Login</h1>
-      <form action="process_signup.php" method="post">
+      <!-- login form  -->
+      <form action="/login" method="POST">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
   
@@ -67,9 +95,16 @@
           <input type="password" id="password" name="password" required>
          
           <button id="sign-up-button" type="submit">Login</button>
+          
+      </form>
     </section>
   </div>
     <h1>Hello, World!</h1>
     <p>This is a simple HTML5 boilerplate.</p>
+
+<footer>
+  <img class="logo" src="./images/logo.png" alt="profile image">
+  <p>Something <i class="fa-solid fa-fish" style="color: #1e3050;"></i> ? Let us know: report@programmer.com</p>
+</footer>
 </body>
 </html>
