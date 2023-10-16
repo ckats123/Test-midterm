@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const listings = require("../db/queries/listings");
+const listings = require("../db/queries/functions/listings");
 
 // /listings search results page
 router.get("/", (req, res) => {
