@@ -22,34 +22,13 @@
     <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <nav>
-    <div id="left-nav">
-      <a href="/" id="home"><img class="logo" src="./images/logo.png" alt="profile image"></a>
-      <span class="website-name">programmer.com</span>
-    </div>
-    <div id="right-nav">
-      <div id="search">
-        <form action="/listings" method="GET">
-          <label for="search">Search:</label>
-          <input type="text" id="search" name="search-term" required>
-          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      </div>
-      <a href="/create-listing" id="create-listing">Create Listing</a>
-      <a href="/listings" id="listings">Listings</a>
-      <a href="/favorites" id="favorites">Favorites</a>
-      <a href="/login" id="login">Login</a> <!--login/join on same page-->
-      <a href="/login" id="join">Join</a> <!--login/join on same page-->
-      <a href="/account" id="account">Account</a>
-
-    </div>
-  </nav>
+  <%- include('partials/nav') %>
   <header>
     <h1>Hire expert Programmers for any job</h1>
     <img src="./images/home.png" alt="image of woman on computer">
   </header>
 
+<<<<<<< HEAD
     <main>
         <section id="search-listings">
             <h2 id="searchbar-title">Search</h2>
@@ -78,6 +57,39 @@
       </a>
       <p>Something <i class="fa-solid fa-fish" style="color: #1e3050;"></i> ? Let us know: report@programmer.com</p>
     </footer>
+=======
+  <main>
+    <section id="search-listings">
+      <h2 id="searchbar-title">Search</h2>
+      <form action="/listings" method="GET">
+        <input type="search" id="search-term" name="search-term" placeholder="Search service listings here...">
+          <div class="price-range-slider">
+            <p><label for="price-slider">Maximum Price:</label></p>
+            <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
+              oninput="document.getElementById('price-display').textContent = '$' + this.value;">
+            <span id="price-display">$1000</span>
+          </div>
+      </form>
+    </section>
+
+    <section id="listings-search-results">
+      <h2>listings results section</h2>
+      <p>search results for listings will render here</p>
+      <% listings.forEach(listing => { %>
+        <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+          <img src = <%= listing.photo_url %>>
+          <h2><%= listing.title %></h2>
+          <p>Price: $<%= listing.price %></p>
+          <p>Description: <%= listing.description %></p>
+          <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+          <p>Date Listed: <%= listing.date_listed %></p>
+          <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+        </div>
+      <% }); %>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+>>>>>>> master
 </body>
 </html>
 
