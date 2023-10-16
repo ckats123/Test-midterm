@@ -1,4 +1,4 @@
-const db = require("../../connection");
+const db = require("../connection");
 
 const getAllListings = () => {
   // This is a sample query
