@@ -1,2 +1,1 @@
-INSERT INTO users (username, user_type) VALUES ('guest_user', 'buyer');
-INSERT INTO users (username, user_type) VALUES ('guest_user', 'seller');
+INSERT INTO users (name, email, password, is_seller) VALUES ('name', 'email', 'password', is_seller);
