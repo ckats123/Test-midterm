@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Listings page</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <%- include('partials/nav') %>
+  <header>
+    <h1>Hire expert Programmers for any job</h1>
+    <img src="./images/home.png" alt="image of woman on computer">
+  </header>
+
+  <main>
+    <section id="search-listings">
+      <h2 id="searchbar-title">Search</h2>
+      <form action="/listings" method="GET">
+        <input type="search" id="search-term" name="search-term" placeholder="Search service listings here...">
+          <div class="price-range-slider">
+            <p><label for="price-slider">Maximum Price:</label></p>
+            <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
+              oninput="document.getElementById('price-display').textContent = '$' + this.value;">
+            <span id="price-display">$1000</span>
+          </div>
+      </form>
+    </section>
+
+    <section id="listings-search-results">
+      <h2>listings results section</h2>
+      <p>search results for listings will render here</p>
+      <% listings.forEach(listing => { %>
+        <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+          <img src = <%= listing.photo_url %>>
+          <h2><%= listing.title %></h2>
+          <p>Price: $<%= listing.price %></p>
+          <p>Description: <%= listing.description %></p>
+          <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+          <p>Date Listed: <%= listing.date_listed %></p>
+          <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+        </div>
+      <% }); %>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
+
+
+
+
+
+
+

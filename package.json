@@ -13,11 +13,12 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^2.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "pg": "^8.5.0",
+    "pg": "^8.11.3",
     "sass": "^1.35.1"
   },
   "devDependencies": {
