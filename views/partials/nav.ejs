@@ -14,11 +14,22 @@
       </form>
     </div>
     <% if (user) { %>
-      <a href="/create-listing" id="create-listing">Create Listing</a>
-      <a href="/listings" id="listings">Listings</a>
-      <a href="/favorites" id="favorites">Favorites</a>
-      <a href="/logout" id="logout">Logout</a>
-      <a href="/account" id="account">Account</a>
+      <% if (is_seller) { %>
+        <a href="/create-listing" id="create-listing">Create Listing</a>
+        <a href="/listings" id="listings">Listings</a>
+        <a href="/favorites" id="favorites">Favorites</a>
+        <form id="logout-form" action="/logout" method="post">
+          <input type="submit" value="Logout">
+        </form>
+        <a href="/account" id="account">Account</a>
+      <% } else { %>
+        <a href="/listings" id="listings">Listings</a>
+        <a href="/favorites" id="favorites">Favorites</a>
+        <form id="logout-form" action="/logout" method="post">
+          <input type="submit" value="Logout">
+        </form>
+        <a href="/account" id="account">Account</a>
+        <% } %>
     <% } else { %>
       <a href="/login" id="login">Login</a>
       <a href="/login" id="join">Join</a>
