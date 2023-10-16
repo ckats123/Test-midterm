@@ -36,7 +36,7 @@ form > .search-button {
   font-size: 1.7rem;
 }
 
-#left-nav > .logo {
+a > .logo {
   width: 80px;
   margin-right: 5%;
 }
@@ -95,10 +95,6 @@ main > #bottom-row {
   margin: 0 2%;
 }
 
-main > #listings-button {
-  margin: 2% 0;
-}
-
 .feature > .profile-container {
   border: #183153 4px solid;
   width: 100%;
@@ -108,7 +104,7 @@ main > #listings-button {
   padding: 2%;
 }
 
-.feature > .hire-me {
+#id-path > .hire-me {
   color: white;
   background-color: #183153;
   border: none;
@@ -116,8 +112,8 @@ main > #listings-button {
   border-radius: 8px;
 }
 
-main > #listings-button {
-  margin: 4% 0%;
+#listings-bottom > #listings-button {
+  margin: 5% 0%;
   border: none;
   border-radius: 8px;
   padding: 15px 20px;
@@ -136,9 +132,9 @@ footer {
   color: black;
 }
 
-footer > .logo {
+footer > a > .logo {
   width: 80px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 footer > p {
