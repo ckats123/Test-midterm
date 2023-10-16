@@ -3,7 +3,7 @@ const db = require("../../connection");
 
 function handleQueryError(error) {
   console.error("Database query error:", error);
-  throw error; 
+  throw error;
 }
 
 const getUsers = () => {
@@ -15,7 +15,7 @@ const getUsers = () => {
 
 const getUserPassword = (email) => {
   return db
-    .query("SELECT email, password FROM users WHERE email = $1;", [email])
+    .query("SELECT email, password, is_seller FROM users WHERE email = $1;", [email])
     .then((data) => data.rows[0])
     .catch(handleQueryError);
 };
