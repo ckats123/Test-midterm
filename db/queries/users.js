@@ -21,3 +21,4 @@ const getSellerAccountInfo = (email) => {
 }
 
 module.exports = { getUsers, getUserPassword, getSellerAccountInfo };
+
