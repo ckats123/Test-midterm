@@ -24,39 +24,16 @@
   <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav>
-    <div id="left-nav">
-      <a href="/" id="home">
-        <img class="logo" src="./images/logo.png" alt="profile image">
-      </a>
-      <span class="website-name">programmer.com</span>
-    </div>
-    <div id="right-nav">
-      <div id="search">
-        <form action="/listings" method="GET">
-          <label for="search">Search:</label>
-          <input type="text" id="search" name="search-term" required>
-          <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      </div>
-      <a href="/create-listing" id="create-listing">Create Listing</a>
-      <a href="/listings" id="listings">Listings</a>
-      <a href="/favorites" id="favorites">Favorites</a>
-      <a href="/login" id="login">Login</a>
-      <a href="/login" id="join">Join</a>
-      <a href="/account" id="account">Account</a>
-
-    </div>
-  </nav>
+  <%- include('partials/nav') %>
   <header>
     <h1>Hire expert Programmers for any job</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
+    <img src="../images/home.png" alt="image of woman on computer">
   </header>
   <main>
     <div id="top-row">
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/female-1.png" alt="profile image">
+          <img src="../images/female-1.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/1" id="id-path">
@@ -65,7 +42,7 @@
       </div>
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/female-2.png" alt="profile image">
+          <img src="../images/female-2.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/2" id="id-path">
@@ -74,7 +51,7 @@
       </div>
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/male-3.png" alt="profile image">
+          <img src="../images/male-3.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/3" id="id-path">
@@ -85,7 +62,7 @@
     <div id="bottom-row">
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/male-2.png" alt="profile image">
+          <img src="../images/male-2.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/4" id="id-path">
@@ -94,7 +71,7 @@
       </div>
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/female-4.png" alt="profile image">
+          <img src="../images/female-4.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/5" id="id-path">
@@ -103,7 +80,7 @@
       </div>
       <div class="feature">
         <span class="profile-container">
-          <img src="./images/male-1.png" alt="profile image">
+          <img src="../images/male-1.png" alt="profile image">
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. </p>
         <a href="/listings/6" id="id-path">
@@ -115,11 +92,6 @@
       <button type="submit" id="listings-button">Find your programmer today!</button>
     </a>
   </main>
-  <footer>
-    <a href="/" id="home">
-      <img class="logo" src="./images/logo.png" alt="profile image">
-    </a>
-    <p>Something <i class="fa-solid fa-fish" style="color: #1e3050;"></i> ? Let us know: report@programmer.com</p>
-  </footer>
+  <%- include('partials/footer') %>
 </body>
 </html>
