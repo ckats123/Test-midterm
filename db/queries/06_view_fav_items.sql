@@ -1,5 +1,10 @@
-SELECT l.* FROM listings l
-JOIN favorites f ON l.id = f.listing_id
-WHERE f.user_id = user_id;
+-- view favorite items
 
--- missing seller info, use JOIN to show seller info 
+SELECT listings.*, favorites.id AS favorite_id
+FROM listings
+JOIN favorites ON favorites.listing_id = listings.id
+WHERE favorites.buyer_id = $1
+AND listings.is_active = true
+ORDER BY listings.created_at DESC;
+
+

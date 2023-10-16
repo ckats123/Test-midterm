@@ -23,4 +23,6 @@ const getListingSearchResults = (term) => {
   })
 }
 
+
+
 module.exports = { getAllListings, getListingById, getListingSearchResults };

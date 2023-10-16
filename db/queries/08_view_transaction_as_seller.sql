@@ -1,3 +1,9 @@
-SELECT * FROM transactions WHERE buyer_id = user_id;
+-- view log of previous transactions
 
--- implement JOIN to show title, and JOIN seller too
+SELECT transactions.*, listings.title, listings.price, listings.seller_id, listings.buyer_id
+FROM transactions
+JOIN listings ON listings.id = transactions.listing_id
+WHERE transactions.seller_id = $1
+OR transactions.buyer_id = $1
+ORDER BY transactions.created_at DESC;
+;
