@@ -60,3 +60,32 @@ main {
   margin: 1rem;
   padding: 1rem 1.3rem;
 }
+
+//favorites button___________________________________________
+.favorite-button {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  top: -35px;
+  
+}
+
+.heart-icon {
+  font-size: 24px;
+  color: red;
+  transition: color 0.3s;
+}
+
+.heart-icon.favorite {
+  color: goldenrod; /* Change to your desired color for the "favorited" state */
+}
+
+.text {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* Change cursor to pointer on hover for user feedback */
+.favorite-button:hover {
+  cursor: pointer;
+}

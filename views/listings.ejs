@@ -52,6 +52,16 @@
       <% listings.forEach(listing => { %>
         <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
           <img src = <%= listing.photo_url %>>
+          
+          <!--favorite listing toggle button-->
+          <div class="favorite-button">
+            <form id="favorite-listing-form" action="/favorite-listing" method="POST">
+              <span class="heart-icon">&#10084;</span>
+              <span class="text">Add to Favorites</span>
+            </form>
+          </div>
+          
+          <!--listing details-->
           <h2><%= listing.title %></h2>
           <p>Price: $<%= listing.price %></p>
           <p>Description: <%= listing.description %></p>
@@ -61,6 +71,7 @@
         </div>
       <% }); %>
     </section>
+
   </main>
   <%- include('partials/footer') %>
 </body>
