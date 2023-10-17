@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/listings.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,21 +25,24 @@
 <body>
   <%- include('partials/nav') %>
   <header>
-    <h1>Hire expert Programmers for any job</h1>
+    <h1>Hire Expert Programmers for any job</h1>
     <img src="./images/home.png" alt="image of woman on computer">
   </header>
 
   <main>
+    <!--search parameters section-->
     <section id="search-listings">
       <h2 id="searchbar-title">Search</h2>
       <form action="/listings" method="GET">
         <input type="search" id="search-term" name="search-term" placeholder="Search service listings here...">
-          <div class="price-range-slider">
+        <!--price slider-->
+        <div class="price-range-slider">
             <p><label for="price-slider">Maximum Price:</label></p>
             <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
               oninput="document.getElementById('price-display').textContent = '$' + this.value;">
             <span id="price-display">$1000</span>
           </div>
+
       </form>
     </section>
 
@@ -48,6 +52,16 @@
       <% listings.forEach(listing => { %>
         <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
           <img src = <%= listing.photo_url %>>
+          
+          <!--favorite listing toggle button-->
+          <div class="favorite-button">
+            <form id="favorite-listing-form" action="/favorite-listing" method="POST">
+              <span class="heart-icon">&#10084;</span>
+              <span class="text">Add to Favorites</span>
+            </form>
+          </div>
+          
+          <!--listing details-->
           <h2><%= listing.title %></h2>
           <p>Price: $<%= listing.price %></p>
           <p>Description: <%= listing.description %></p>
@@ -57,6 +71,7 @@
         </div>
       <% }); %>
     </section>
+
   </main>
   <%- include('partials/footer') %>
 </body>
