@@ -1,0 +1,22 @@
+// Header section
+
+#account-header {
+  justify-content: center;
+  align-items: center;
+}
+
+#account-header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  border: #183153 4px solid;
+  background-color: #183153;
+}
+
+#account-header > img {
+  margin: 0%;
+}
+
+// Main section
+

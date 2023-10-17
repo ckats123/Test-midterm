@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/account.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,13 +26,13 @@
 </head>
 <body>
   <%- include('partials/nav') %>
-  <header>
-    <h1>Hire expert Programmers for any job</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
+  <header id="account-header">
+    <img src="./images/account.png" alt="image of shield with a checkmark">
+    <h1><%- username %></h1>
   </header>
   <!--Just placeholders with dummy data in the main element-->
   <% if (is_seller) { %>
-  <main>
+  <main id = "account-main">
     <!--Profile-->
     <section id="profile">
       <h2>Bio</h2>
