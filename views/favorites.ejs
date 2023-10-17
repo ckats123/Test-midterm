@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/favorites.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +27,42 @@
 <body>
   <%- include('partials/nav') %>
   <header>
-    <h1>Hire expert Programmers for any job</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
+    <h1>My Favorited Listings </h1>
+    <!--header big heart emoji-->
+    <h1>&#10084;&#65039;</h1>
+  
   </header>
   <main>
+    <!--heart emojis-->
+    <h3>&#128154; &#128154; &#128154; &#128154; &#128154;</h3>
+
     <!--Logic for favorites list-->
+    <section id="favorited-listings">
+      <p>favorited listings will render here</p>
+      
+      <!--container for listings data-->
+      <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+        <img src ="https://placehold.co/100">
+        <h2>listing.title</h2>
+        <p>Price: listing.price</p>
+        <p>Description: listing.description</p>
+        <p>Details: <a href="/listings/listing.id">Read more</a></p>
+        <p>Date Listed: listing.date_listed</p>
+        <p>Is Active: listing.is_active ? 'Yes' : 'No'</p>
+      </div>
+
+      <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+        <img src ="https://placehold.co/100">
+        <h2>listing.title</h2>
+        <p>Price: listing.price</p>
+        <p>Description: listing.description</p>
+        <p>Details: <a href="/listings/listing.id">Read more</a></p>
+        <p>Date Listed: listing.date_listed</p>
+        <p>Is Active: listing.is_active ? 'Yes' : 'No'</p>
+      </div>
+
+    </section>
+
   </main>
   <%- include('partials/footer') %>
 </body>
