@@ -31,7 +31,9 @@ app.use(cookieParser());
 // For viewing permissions
 app.use((req, res, next) => {
   const user = req.cookies.email; // Get email from cookie
+  const isSeller = req.cookies.is_seller; // Get is_seller from cookie
   res.locals.user = user; // Make the user object available to all templates
+  res.locals.is_seller = isSeller; // Make is_seller available to all templates
   next();
 });
 
