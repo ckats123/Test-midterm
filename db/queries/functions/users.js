@@ -12,6 +12,13 @@ const getUsers = () => {
     .catch(handleQueryError);
 };
 
+const getUserByEmail = (email) => {
+  return db
+    .query("SELECT * FROM users WHERE email = $1;", [email])
+    .then((data) => data.rows[0])
+    .catch(handleQueryError);
+};
+
 const getUserPassword = (email) => {
   return db
     .query("SELECT email, password, is_seller FROM users WHERE email = $1;", [email])
@@ -29,4 +36,4 @@ const getSellerAccountInfo = (email) => {
     .catch(handleQueryError);
 };
 
-module.exports = { getUsers, getUserPassword, getSellerAccountInfo };
+module.exports = { getUsers, getUserByEmail, getUserPassword, getSellerAccountInfo };
