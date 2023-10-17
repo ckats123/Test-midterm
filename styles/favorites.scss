@@ -1,0 +1,26 @@
+header {
+  height: 40vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  /* Add styles for your main content here */
+}
+
+#favorited-listings {
+  border: 15px solid #398378;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.listing-tile {
+  width: 80vw;
+}

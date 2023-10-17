@@ -49,26 +49,40 @@
       <h2>Transactions Log</h2>
       <table>
         <tr>
-          <th>Buyer</th>
           <th>Seller</th>
+          <th>Buyer</th>
           <th>Purchase Date</th>
           <th>Amount</th>
         </tr>
-        <tr>
-          <td>ID</td>
-          <td>ID</td>
-          <td>Date</td>
-          <td>$0.00</td>
-        </tr>
+            <% mySalesLog.forEach(transaction => { %>
+              <tr>
+              <td>
+                <%= transaction.seller_id %>
+              </td>
+              <td>
+                <%= transaction.buyer_id %>
+              </td>
+              <td>
+                <%= transaction.purchase_date %>
+              </td>
+              <td>
+                <%= transaction.final_cost %>
+              </td>
+              </tr>
+            <% }); %>
       </table>
     </section>
     <!--Reviews-->
     <section id="reviews">
       <h2>Reviews</h2>
-      <article>
-        <span>User A</span>
-        <p>Great service! I highly recommend this person.</p>
-      </article>
+      <% myReviews.forEach(review => { %>
+        <article>
+          <h3>Rating: <%= review.rating %></h3>
+          <p>Listing: <a href="<%= '/listings/' + review.id %>"><%= review.title %></a></p>
+          <p>Message: <%= review.message %></p>
+          <p>Transaction number: <%= review.transaction_id %></p>
+        </article>
+      <% }); %>
     </section>
     <!--Sellers Listings-->
     <section id="sellers-listings">

@@ -32,4 +32,14 @@ const getListingSearchResults = (term) => {
   });
 };
 
-module.exports = { getAllListings, getListingById, getListingSearchResults };
+const getListingsBySeller = (seller_id) => {
+  console.log(`Querying ${seller_id}`)
+  const query = `
+    SELECT * FROM listings
+    WHERE seller_id = ${seller_id}`;
+  return db.query(query).then((data) => {
+    return data.rows;
+  });
+};
+
+module.exports = { getAllListings, getListingById, getListingSearchResults, getListingsBySeller };
