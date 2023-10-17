@@ -9,14 +9,187 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 1%;
+  margin-left: 25%;
   border: #183153 4px solid;
   background-color: #183153;
 }
 
 #account-header > img {
   margin: 0%;
+  width: 20%;
 }
 
-// Main section
+// Bio section
 
+.profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: #183153 4px solid;
+  background-color: #183153;
+  color: white;
+  padding: 1%;
+  margin: 1%;
+  width: 70%;
+}
+
+.profile > img {
+  width: 40%;
+}
+
+.right-bio {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.right-bio > h2 {
+  font-family: 'Young Serif', serif;
+  font-size: 2rem;
+  margin: 0%;
+}
+
+.right-bio > p {
+  background-color: white;
+  padding: 3%;
+  color: black;
+  font-weight: 500;
+}
+
+.right-bio > ul {
+  list-style: none;
+  font-weight: 500;
+  background-color: white;
+  color: black;
+  padding: 3%;
+}
+
+.right-bio > form > button {
+  border-radius: 8px;
+  background-color: #398378;
+  border-color: #398378;
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  padding: 3%;
+  margin-top: 2%;
+}
+
+// Transactions section
+
+.transaction-log {
+  margin: 1%;
+  width: 70%;
+  background-color: #183153;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction-log > h2 {
+  color: white;
+  font-size: 2rem;
+  border: #398378 4px solid;
+  padding: 3% 5%;
+}
+
+.transaction-log > table {
+  background-color: white;
+  padding: 2%;
+  margin-bottom: 4%;
+  width: 90%;
+}
+
+.transaction-log > table > tbody > tr {
+  margin-top: 4%;
+}
+
+// Reviews
+
+#reviews {
+  margin: 1%;
+  width: 70%;
+  background-color: #183153;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#reviews > h2 {
+  color: white;
+  font-size: 2rem;
+  border: #398378 4px solid;
+  padding: 3% 13%;
+}
+
+#reviews > article {
+  width: 90%;
+  background-color: white;
+  border: #183153 4px solid;
+  margin-bottom: 3%;
+}
+
+#reviews > article > h3 {
+  background-color: #398378;
+  color: white;
+  padding: 1%;
+  margin-top: 0%;
+}
+
+#reviews > article > p {
+  margin-left: 1%;
+}
+
+// Listings
+
+#sellers-listings {
+  margin: 1%;
+  width: 70%;
+  background-color: #183153;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sellers-listings > h2 {
+  color: white;
+  font-size: 2rem;
+  border: #398378 4px solid;
+  padding: 3% 10%;
+}
+
+ul {
+  width: 100%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0%;
+}
+
+ul > .listing-tile {
+  width: 90%;
+  border: #183153 4px solid;
+  background-color: white;
+  padding: 0% !important;
+}
+
+.listing-tile > img {
+  display: none;
+}
+
+.listing-tile > h2 {
+  background-color: #398378;
+  color: white;
+  padding: 1%;
+  margin-top: 0%;
+  width: 100%;
+}
+
+.listing-tile > p {
+  margin-left: 1%;
+}
