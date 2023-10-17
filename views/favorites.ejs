@@ -30,7 +30,7 @@
     <h1>My Favorited Listings </h1>
     <!--header big heart emoji-->
     <h1>&#10084;&#65039;</h1>
-  
+
   </header>
   <main>
     <!--heart emojis-->
@@ -39,9 +39,22 @@
     <!--Logic for favorites list-->
     <section id="favorited-listings">
       <p>favorited listings will render here</p>
-      
+
+      <% favorites.forEach(listing => { %>
+        <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+          <img src = <%= listing.photo_url %>>
+          <h2><%= listing.title %></h2>
+          <p>Price: $<%= listing.price %></p>
+          <p>Description: <%= listing.description %></p>
+          <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+          <p>Date Listed: <%= listing.date_listed %></p>
+          <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+        </div>
+      <% }); %>
+
+
       <!--placeholdercontainer for single listing data-->
-      <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+      <!-- <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
         <img src ="https://placehold.co/100">
         <h2>listing.title</h2>
         <p>Price: listing.price</p>
@@ -59,7 +72,7 @@
         <p>Details: <a href="/listings/listing.id">Read more</a></p>
         <p>Date Listed: listing.date_listed</p>
         <p>Is Active: listing.is_active ? 'Yes' : 'No'</p>
-      </div>
+      </div> -->
 
     </section>
 
