@@ -21,7 +21,7 @@ const getUserByEmail = (email) => {
 
 const getUserPassword = (email) => {
   return db
-    .query("SELECT email, password, is_seller, username FROM users WHERE email = $1;", [email])
+    .query("SELECT * FROM users WHERE email = $1;", [email])
     .then((data) => data.rows[0])
     .catch(handleQueryError);
 };

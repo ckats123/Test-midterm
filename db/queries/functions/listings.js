@@ -2,6 +2,7 @@
 
 const db = require("../../connection");
 
+// GET functions
 const getAllListings = () => {
   const query = `
     SELECT * FROM listings
@@ -33,7 +34,7 @@ const getListingSearchResults = (term) => {
 };
 
 const getListingsBySeller = (seller_id) => {
-  console.log(`Querying ${seller_id}`)
+  console.log(`Querying ${seller_id}`);
   const query = `
     SELECT * FROM listings
     WHERE seller_id = ${seller_id}`;
@@ -42,4 +43,22 @@ const getListingsBySeller = (seller_id) => {
   });
 };
 
-module.exports = { getAllListings, getListingById, getListingSearchResults, getListingsBySeller };
+// POST functions
+// id (serialized), seller_id (from cookies), title, price, description, date_listed (today), is_active (default true)
+const createNewListing = (seller_id, item_title, item_price, item_description) => {
+  const today = new Date();
+  const query = `INSERT INTO listings (seller_id, title, price, description, date_listed)
+  VALUES ($1, $2, $3, $4, $5);`;
+  return db.query(query, [seller_id, item_title, item_price, item_description, today]).then((data) => {
+    // don't need this, will remove
+    return data.rows;
+  })
+};
+
+module.exports = {
+  getAllListings,
+  getListingById,
+  getListingSearchResults,
+  getListingsBySeller,
+  createNewListing
+};

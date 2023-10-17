@@ -4,7 +4,7 @@ const listings = require("../db/queries/functions/listings");
 
 // /listings search results page
 router.get("/", (req, res) => {
-  let searchTerm = req.query['search-term'] || "";
+  let searchTerm = req.query["search-term"] || "";
 
   listings
     .getListingSearchResults(searchTerm)
@@ -23,8 +23,13 @@ router.get("/:listing_id", (req, res) => {
   listings
     .getListingById(listingId)
     .then((listingData) => {
-      console.log(listingData);
-      res.render("listing_details", { listing: listingData[0] });
+      if (!listingData || listingData.length === 0) {
+        // No listing data
+        res.sendStatus(404);
+      } else {
+        // Found listing data
+        res.render("listing_details", { listing: listingData[0] });
+      }
     })
     .catch((error) => {
       console.log(error);
