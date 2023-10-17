@@ -1,4 +1,4 @@
-const db = require("../connection");
+const db = require("../../connection");
 
 function handleQueryError(error) {
   console.error("Database query error:", error);
