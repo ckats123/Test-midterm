@@ -1,12 +1,12 @@
 // listings.js
 
-const db = require("../connection");
+const db = require("../../connection");
 
 const getAllListings = () => {
   const query = `
-    SELECT * FROM listings 
-    JOIN users on seller_id = users.id 
-    JOIN sellers_info ON sellers_info.user_id = users.id 
+    SELECT * FROM listings
+    JOIN users on seller_id = users.id
+    JOIN sellers_info ON sellers_info.user_id = users.id
     LIMIT 12`;
   return db.query(query).then((data) => {
     return data.rows;
@@ -22,10 +22,10 @@ const getListingById = (id) => {
 
 const getListingSearchResults = (term) => {
   query = `
-    SELECT * FROM listings 
-    JOIN users ON seller_id = users.id 
-    JOIN sellers_info ON sellers_info.user_id = users.id 
-    WHERE title ILIKE '%${term}%' 
+    SELECT * FROM listings
+    JOIN users ON seller_id = users.id
+    JOIN sellers_info ON sellers_info.user_id = users.id
+    WHERE title ILIKE '%${term}%'
     LIMIT 12`;
   return db.query(query).then((data) => {
     return data.rows;

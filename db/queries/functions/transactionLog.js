@@ -1,6 +1,6 @@
 // transaction log of both buyer and seller
 
-const db = require("../connection");
+const db = require("../../connection");
 
 const getTransactionLog = (id) => {
   const query = `SELECT * FROM transactions WHERE buyer_id = $1 OR seller_id = $1`;
