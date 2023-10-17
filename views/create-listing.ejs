@@ -29,11 +29,27 @@
   <%- include('partials/nav') %>
 
   <header>
-    <h1>Hire expert Programmers for any job</h1>
+    <h1>Create your listing!</h1>
     <img src="./images/home.png" alt="image of woman on computer">
   </header>
+
   <main>
-    <!--Logic for creating a listing here-->
+    <div id="create-listing-form-container">
+      
+      <form action="/create-listing" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+      </form>
+
+    </div>
   </main>
 
   <%- include('partials/footer') %>
