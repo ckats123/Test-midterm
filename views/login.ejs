@@ -1,85 +1,113 @@
-<!DOCTYPE html>
+
+
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>Home Page</title>
 
-<head>
-  <title>Home Page</title>
-
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/login.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <%- include('partials/nav') %>
-
   <header>
-    <h1>You should totally Sign-Up! <br> 
-        It will change your life. <br>
-    </h1>
+    <h1>Hire expert Programmers for any job</h1>
+    <img src="./images/home.png" alt="image of woman on computer">
   </header>
-
-  <div id="forms-container">
-    <section id="sign-up">
-      <h1>Join!</h1>
-      <!-- registration form  -->
-      <form action="/register" method="POST">  registration form
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-  
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          
+  <main>
+    <!--Login-->
+    <section id="login">
+      <h3>Login</h3>
+      <form method="POST" action="/login">
+        <!-- Email Input -->
+        <div class="form">
+          <label for="email">Email address</label>
           <br>
-          <hr>
-
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <br>
+        <!-- Password Input -->
+        <div class="form">
+          <label for="password">Password:</label>
+          <br>
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <br>
+        <!-- Submit Button -->
+        <button type="submit">Login</button>
+      </form>
+    </section>
+    <section id="register">
+      <h3>Register</h3>
+      <form method="POST" action="/login">
+        <!-- Username -->
+        <div class="form">
+          <label for="username">Username</label>
+          <br>
+          <input type="username" id="username" name="username" placeholder=" username">
+        </div>
+        <!-- Name -->
+        <div class="form">
+          <label for="name">Name</label>
+          <br>
+          <input type="name" id="name" name="name" placeholder=" name">
+        </div>
+        <!-- Email Input -->
+        <div class="form">
+          <label for="email">Email address</label>
+          <br>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <br>
+        <!-- Password Input -->
+        <div class="form">
+          <label for="password">Password:</label>
+          <br>
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <br>
+        <!-- Seller Option (Checkbox) -->
+        <div class="form">
           <label for="seller">Are you a seller?</label>
           <br>
           <input type="checkbox" id="seller" name="seller" value="true">
+        </div>
+        <br>
+            <!-- Location Input -->
+        <div class="form">
+          <label for="location">Location</label>
           <br>
-          
-          <label for="location">Location (seller only) </label>
+          <input type="text" id="location" name="location" placeholder="location">
+        </div>
+        <!-- Image Input -->
+        <div class="form">
+          <label for="image">Image (URL or Upload)</label>
           <br>
-          <input type="text" id="location" name="location" placeholder="city, prov/state">
-
-          <label for="image">Profile-image URL (seller only)</label>
-          <br>
-          <input type="text" id="image" name="image" placeholder="image link-URL">
-          
-          <button id="sign-up-button" type="submit">Sign Up</button>
+          <input type="text" id="image" name="image" placeholder="image URL">
+        </div>
+        <!-- Submit Button -->
+        <button type="submit">Join</button>
       </form>
     </section>
-  
-    <section id="login-container">
-      <h1>Login</h1>
-      <!-- login form  -->
-      <form action="/login" method="POST">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-  
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-         
-          <button id="sign-up-button" type="submit">Login</button>
-          
-      </form>
-    </section>
-    </div>
-
   </main>
   <%- include('partials/footer') %>
 </body>
