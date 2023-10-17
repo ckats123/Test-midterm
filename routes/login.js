@@ -20,11 +20,13 @@ router.post("/", (req, res) => {
           res.cookie('is_seller', "1"); // "1" same as truthy
           console.log("is_seller cookie set to true");
           res.cookie('username', data.username);
+          res.cookie('user_id', data.id)
         } else {
           res.cookie('email', data.email);
           res.cookie('is_seller', ""); // "" same as falsy
           console.log("is_seller cookie set to false");
           res.cookie('username', data.username);
+          res.cookie('user_id', data.id)
         }
         res.redirect('/');
       } else {
