@@ -16,10 +16,21 @@ const getSellerTransactionLog = (id) => {
 };
 
 const getBuyerTransactionLog = (id) => {
-  const query = `SELECT * FROM transactions WHERE buyer_id = $1`;
+  const query = `SELECT transactions.*, seller_id
+  FROM transactions
+  JOIN listings ON listing_id = listings.id
+  JOIN users ON seller_id = users.id
+  WHERE buyer_id = $1`;
   return db.query(query, [id]).then((data) => {
     return data.rows;
   });
 };
+
+// const getBuyerTransactionLog = (id) => {
+//   const query = `SELECT * FROM transactions WHERE buyer_id = $1`;
+//   return db.query(query, [id]).then((data) => {
+//     return data.rows;
+//   });
+// };
 
 module.exports = { getSellerTransactionLog, getBuyerTransactionLog };
