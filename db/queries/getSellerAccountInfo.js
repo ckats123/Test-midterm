@@ -1,6 +1,6 @@
 // getSellerAccountInfo.js
 
-const db = require("../../connection");
+const db = require("../connection");
 
 const getSellerAccountInfo = (sellerid) => {
   return db
