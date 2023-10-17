@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/create_listing.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,14 +25,41 @@
   <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <%- include('partials/nav') %>
+
   <header>
-    <h1>Hire expert Programmers for any job</h1>
+    <h1>Create your listing!</h1>
     <img src="./images/home.png" alt="image of woman on computer">
   </header>
+
   <main>
-    <!--Logic for creating a listing here-->
+    <div id="create-listing-form-container">
+      
+      <h2>Make a listing for your Service!</h2>
+      <hr>
+      <br>
+<!--create-listing form______________________________________________________-->
+      <form action="/create-listing" method="POST"> 
+        <label for="title">Title:</label>
+         <!--title-->
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="price">Price:</label>
+        <!--price-->
+        <input type="number" id="price" name="price" step="0.01" required><br><br> 
+
+        <label for="description">Description:</label><br>
+        <!--descriptions-->
+        <textarea id="description" name="description" rows="4" cols="50" required placeholder="details about your service listing here..."></textarea><br><br>
+
+        <button id="create-listing-button" type="submit">Create Listing</button>
+      </form>
+
+    </div>
   </main>
+
   <%- include('partials/footer') %>
+  
 </body>
 </html>
