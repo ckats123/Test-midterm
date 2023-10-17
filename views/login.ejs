@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/login.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,91 +23,125 @@
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <%- include('partials/nav') %>
-  <header>
-    <h1>Hire expert Programmers for any job</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
-  </header>
-  <main>
-    <!--Login-->
-    <section id="login">
-      <h3>Login</h3>
-      <form method="POST" action="/login">
-        <!-- Email Input -->
-        <div class="form">
-          <label for="email">Email address</label>
-          <br>
-          <input type="email" id="email" name="email" placeholder="Enter your email">
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/21c6db8c84.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+
+    <header>
+      <h1>Find your mentor online.</h1>
+    </header>
+
+    <div class="forms-container">
+      <div class="forms-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="register()">
+            Register
+          </button>
         </div>
-        <br>
-        <!-- Password Input -->
-        <div class="form">
-          <label for="password">Password:</label>
-          <br>
-          <input type="password" id="password" name="password" placeholder="Password">
+        <div class="social-icons">
+          <i class="fa-brands fa-square-twitter" style="color: #25511f"></i>
+          <i class="fa-brands fa-square-facebook" style="color: #25511f"></i>
+          <i class="fa-brands fa-square-instagram" style="color: #25511f"></i>
         </div>
-        <br>
-        <!-- Submit Button -->
-        <button type="submit">Login</button>
-      </form>
-    </section>
-    <section id="register">
-      <h3>Register</h3>
-      <form method="POST" action="/login">
-        <!-- Username -->
-        <div class="form">
-          <label for="username">Username</label>
-          <br>
-          <input type="username" id="username" name="username" placeholder=" username">
-        </div>
-        <!-- Name -->
-        <div class="form">
-          <label for="name">Name</label>
-          <br>
-          <input type="name" id="name" name="name" placeholder=" name">
-        </div>
-        <!-- Email Input -->
-        <div class="form">
-          <label for="email">Email address</label>
-          <br>
-          <input type="email" id="email" name="email" placeholder="Enter your email">
-        </div>
-        <br>
-        <!-- Password Input -->
-        <div class="form">
-          <label for="password">Password:</label>
-          <br>
-          <input type="password" id="password" name="password" placeholder="Password">
-        </div>
-        <br>
-        <!-- Seller Option (Checkbox) -->
-        <div class="form">
-          <label for="seller">Are you a seller?</label>
-          <br>
-          <input type="checkbox" id="seller" name="seller" value="true">
-        </div>
-        <br>
-            <!-- Location Input -->
-        <div class="form">
-          <label for="location">Location</label>
-          <br>
-          <input type="text" id="location" name="location" placeholder="location">
-        </div>
-        <!-- Image Input -->
-        <div class="form">
-          <label for="image">Image (URL or Upload)</label>
-          <br>
-          <input type="text" id="image" name="image" placeholder="image URL">
-        </div>
-        <!-- Submit Button -->
-        <button type="submit">Join</button>
-      </form>
-    </section>
-  </main>
-  <%- include('partials/footer') %>
-</body>
+        <form id="login" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter Password"
+            required
+          />
+          <input type="checkbox" class="check-box" /><span id="rmb-me"
+            >Remember Password</span
+          >
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <form id="register" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter Password"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter your city"
+            required
+          />
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter your province/state"
+            required
+          />
+          <input
+            type="checkbox"
+            class="toggle-buyer-seller"
+            id="buyer-seller"
+          /><span id="buyer-seller">I am a seller</span>
+          <input type="checkbox" class="check-box" /><span
+            id="terms-and-conditions"
+            >I agree to the terms & conditions</span
+          >
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+      var currentForm = "login";
+
+      function register() {
+        if (currentForm === "login") {
+          x.style.left = "-400px";
+          y.style.left = "50px";
+          z.style.left = "110px";
+          currentForm = "register";
+        } else {
+          return currentForm;
+        }
+      }
+      function login() {
+        if (currentForm === "register") {
+          x.style.left = "50px";
+          y.style.left = "450px";
+          z.style.left = "0px";
+          currentForm = "login";
+        } else {
+          return currentForm;
+        }
+      }
+    </script>
+  </body>
 </html>

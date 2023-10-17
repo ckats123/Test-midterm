@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.forms-container {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.forms-box {
+  width: 450px;
+  height: 500px;
+  position: relative;
+  margin: 6% auto;
+  // background: #398378;
+  background: white;
+  padding: 5px;
+  overflow: hidden;
+  border: 1px solid #398378;
+}
+
+.button-box {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #13974f1f;
+  border-radius: 30px;
+}
+
+.toggle-btn {
+  padding: 15px 25px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(to-right, #8fbc8f, #8fbc8f);
+  border-radius: 30px;
+  transition: 0.5s;
+  background-color: #398378;
+}
+
+.social-icons {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.fa-brands {
+  margin: 0px;
+  box-shadow: 0 0 20px 0 #8fbc8f;
+  cursor: pointer;
+  size: 50px;
+}
+
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to-right, #8fbc8f, #8fbc8f);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+
+.check-box {
+  margin: 0px 0px 0px 0;
+}
+
+#buyer-seller {
+  font-size: 10px;
+}
+
+#terms-and-conditions {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+span #rmb-me {
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+
+#login {
+  left: 50px;
+}
+
+#register {
+  left: 450px;
+}
