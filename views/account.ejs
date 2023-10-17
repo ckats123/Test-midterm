@@ -27,8 +27,17 @@
 <body>
   <%- include('partials/nav') %>
   <header id="account-header">
-    <img src="./images/account.png" alt="image of shield with a checkmark">
-    <h1><%- username %></h1> <!--will come back and put next to this if someone is a buyer/seller with a little 'font awesome' icon next to it-->
+    <img src="./images/account.png" alt="image of avatar and a shield with a checkmark">
+    <div id ="header-user">
+      <h1><%- username %></h1>
+      <h2>
+        <% if (is_seller) { %>
+          Seller  <i class="fa-solid fa-money-check-dollar" style="color: #1e3050;"></i>
+        <% } else { %>
+          Buyer <i class="fa-solid fa-cart-shopping" style="color: #1e3050;"></i>
+        <% }; %>
+      </h2>
+    </div>
   </header>
   <main id="account-main">
     <% if (is_seller) { %>
