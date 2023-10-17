@@ -52,7 +52,7 @@
           <i class="fa-brands fa-square-facebook" style="color: #25511f"></i>
           <i class="fa-brands fa-square-instagram" style="color: #25511f"></i>
         </div>
-        <form action="/register" method="POST" id="login" class="input-group">
+        <form action="/login" method="POST" id="login-form" class="input-group">
           <input
             type="text"
             class="input-field"
@@ -70,7 +70,12 @@
           >
           <button type="submit" class="submit-btn">Login</button>
         </form>
-        <form id="register" class="input-group">
+        <form
+          action="/register"
+          method="POST"
+          id="register-form"
+          class="input-group"
+        >
           <input
             type="text"
             class="input-field"
@@ -117,16 +122,16 @@
     <%- include('partials/footer') %>
 
     <script>
-      var x = document.getElementById("login");
-      var y = document.getElementById("register");
-      var z = document.getElementById("btn");
+      var loginForm = document.getElementById("login-form");
+      var registerForm = document.getElementById("register-form");
+      var toggleBtn = document.getElementById("btn");
       var currentForm = "login";
 
       function register() {
         if (currentForm === "login") {
-          x.style.left = "-400px";
-          y.style.left = "50px";
-          z.style.left = "110px";
+          loginForm.style.left = "-400px";
+          registerForm.style.left = "50px";
+          toggleBtn.style.left = "110px";
           currentForm = "register";
         } else {
           return currentForm;
@@ -134,9 +139,9 @@
       }
       function login() {
         if (currentForm === "register") {
-          x.style.left = "50px";
-          y.style.left = "450px";
-          z.style.left = "0px";
+          loginForm.style.left = "50px";
+          registerForm.style.left = "450px";
+          toggleBtn.style.left = "0px";
           currentForm = "login";
         } else {
           return currentForm;
