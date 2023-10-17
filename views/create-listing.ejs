@@ -36,17 +36,24 @@
   <main>
     <div id="create-listing-form-container">
       
-      <form action="/create-listing" method="POST">
+      <h2>Make a listing for your Service!</h2>
+      <hr>
+      <br>
+<!--create-listing form______________________________________________________-->
+      <form action="/create-listing" method="POST"> 
         <label for="title">Title:</label>
+         <!--title-->
         <input type="text" id="title" name="title" required><br><br>
 
         <label for="price">Price:</label>
-        <input type="number" id="price" name="price" step="0.01" required><br><br>
+        <!--price-->
+        <input type="number" id="price" name="price" step="0.01" required><br><br> 
 
         <label for="description">Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+        <!--descriptions-->
+        <textarea id="description" name="description" rows="4" cols="50" required placeholder="details about your service listing here..."></textarea><br><br>
 
-        <input type="submit" value="Submit">
+        <button id="create-listing-button" type="submit">Create Listing</button>
       </form>
 
     </div>
