@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const listingQueries = require('../db/queries/listings');
+const listingQueries = require('../db/queries/functions/listings');
 
 router.get('/', (req, res) => {
   listingQueries.getAllListings()

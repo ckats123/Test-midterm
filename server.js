@@ -28,6 +28,13 @@ app.use(
 app.use(express.static('public'));
 app.use(cookieParser());
 
+// For viewing permissions
+app.use((req, res, next) => {
+  const user = req.cookies.email; // Get email from cookie
+  res.locals.user = user; // Make the user object available to all templates
+  next();
+});
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
