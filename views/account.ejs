@@ -31,7 +31,8 @@
     <h1><%- username %></h1>
   </header>
   <!--Just placeholders with dummy data in the main element-->
-  <main id="account-main">
+  <% if (is_seller) { %>
+  <main id = "account-main">
     <!--Profile-->
     <section id="profile">
       <h2>Bio</h2>
@@ -56,6 +57,22 @@
           <th>Amount</th>
         </tr>
             <% mySalesLog.forEach(transaction => { %>
+              <tr>
+              <td>
+                <%= transaction.seller_id %>
+              </td>
+              <td>
+                <%= transaction.buyer_id %>
+              </td>
+              <td>
+                <%= transaction.purchase_date %>
+              </td>
+              <td>
+                <%= transaction.final_cost %>
+              </td>
+              </tr>
+            <% }); %>
+            <% myBuyLog.forEach(transaction => { %>
               <tr>
               <td>
                 <%= transaction.seller_id %>
@@ -103,6 +120,46 @@
       </ul>
     </section>
   </main>
+  <% } else { %>
+    <section id="profile">
+      <h2>Bio</h2>
+      <p>Short description about the person.</p>
+      <ul>
+        <li>E-mail: <%= userInfo.email %></li>
+        <li>Name: <%= userInfo.name %></li>
+      </ul>
+      <form action="/logout" method="POST" style="text-align: center;">
+        <button type="submit">Logout</button>
+      </form>
+    </section>
+    <section id="transaction-log">
+      <h2>Transactions Log</h2>
+      <table>
+        <tr>
+          <th>Seller</th>
+          <th>Buyer</th>
+          <th>Purchase Date</th>
+          <th>Amount</th>
+        </tr>
+            <% myBuyLog.forEach(transaction => { %>
+              <tr>
+              <td>
+                <%= transaction.seller_id %>
+              </td>
+              <td>
+                <%= transaction.buyer_id %>
+              </td>
+              <td>
+                <%= transaction.purchase_date %>
+              </td>
+              <td>
+                <%= transaction.final_cost %>
+              </td>
+              </tr>
+            <% }); %>
+      </table>
+    </section>
+  <% }; %>
   <%- include('partials/footer') %>
 </body>
 </html>
