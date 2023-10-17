@@ -25,7 +25,7 @@ const getListingSearchResults = (term) => {
     SELECT * FROM listings
     JOIN users ON seller_id = users.id
     JOIN sellers_info ON sellers_info.user_id = users.id
-    WHERE title ILIKE '%${term}%'
+    WHERE title LIKE '%${term}%'
     LIMIT 12`;
   return db.query(query).then((data) => {
     return data.rows;
