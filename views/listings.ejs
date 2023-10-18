@@ -36,13 +36,29 @@
       <form action="/listings" method="GET">
         <input type="search" id="search-term" name="search-term" placeholder="Search listings...">
         <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- additional search fields -->
+        <div class = "description-field">
+          <label for="description">Description (optional):</label>
+          <input type="text" id="description" name="description" placeholder="Description">
+        </div>
+        <div class = "seller-name-field">
+          <label for="seller-name">Seller name (optional):</label>
+          <input type="text" id="seller-name" name="seller-name" placeholder="Seller name">
+        </div>
         <!--price slider-->
         <div class="price-range-slider">
-            <label for="price-slider">Maximum Price:</label>
-            <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
-              oninput="document.getElementById('price-display').textContent = '$' + this.value;">
-            <span id="price-display">$1000</span>
-          </div>
+            <label for="price-slider-min">Maximum Price:</label>
+            <input type="range" min="0" max="1000" value="0" step="10" id="price-slider-min" name = "price-slider-min"
+              oninput="document.getElementById('price-display-min').textContent = '$' + this.value;">
+            <span id="price-display-min">$0</span>
+        </div>
+        <!--price slider-->
+        <div class="price-range-slider">
+            <label for="price-slider-max">Maximum Price:</label>
+            <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider-max" name = "price-slider-max"
+              oninput="document.getElementById('price-display-max').textContent = '$' + this.value;">
+            <span id="price-display-max">$1000</span>
+        </div>
 
       </form>
     </section>
