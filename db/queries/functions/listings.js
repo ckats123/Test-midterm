@@ -15,7 +15,7 @@ const getAllListings = () => {
 };
 
 const getListingById = (id) => {
-  const query = `SELECT * FROM listings
+  const query = `SELECT listings.*, users.name, users.email, sellers_info.photo_url FROM listings
   JOIN users ON seller_id = users.id
   JOIN sellers_info ON sellers_info.user_id = users.id
   WHERE listings.id=$1`;
@@ -27,7 +27,7 @@ const getListingById = (id) => {
 const getListingSearchResults = (completedSearchTerm) => {
   console.log(completedSearchTerm);
   query = `
-  SELECT * FROM listings
+  SELECT listings.*, users.name, sellers_info.photo_url FROM listings
   JOIN users ON seller_id = users.id
   JOIN sellers_info ON sellers_info.user_id = users.id
   WHERE title ILIKE $1
