@@ -1,18 +1,34 @@
-header {
-  height: 40vh;
-  margin-bottom: -2rem;
-}
+// Header
 
-header > h1 {
-  font-size: 4rem;
-}
-
-
-main {
+#listings-header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 80%;
+  padding-bottom: 2%;
+}
+
+#listings-header > h1 {
+  width: 50%;
+  font-size: 3.5rem;
+  margin: 0%;
+}
+
+#listings-header > img {
+  margin: 0% 2%;
+}
+
+// Main
+
+#listings-main {
+  margin-top: 3%;
+}
+
+// Advanced Search
+
+#search-listings {
+  background-color: #398378;
+  border-radius: 10px;
+  padding: 2%;
 }
 
 #searchbar-title {
@@ -20,22 +36,14 @@ main {
   font-family: "Young Serif", serif;
   font-weight:900;
   font-size: 3rem;
-  color: #f6836b;
-  margin-bottom: -0.7rem;
+  color: #8fbc8f;
+  margin: 1%;
+  -webkit-text-stroke: 1px #183153;
 }
 
 #search-term {
   width: 40vw;
   margin-bottom: 1.5rem;
-  border: 0.5rem solid #398378;
-  border-radius: 1rem;
-}
-
-#searchbar-listings {
-  width: 600px;
-  height: 50px;
-  text-align: center;
-
 }
 
 .price-range-slider {
@@ -49,35 +57,60 @@ main {
   margin-bottom: 0;
 }
 
-#price-slider {
+#price-slider[type="range"] {
   width: 100%;
+  accent-color: #f6836b;
 }
 
+// Listing Results
+
 #listings-search-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  border: 20px solid #8fbc8f;
   border-radius: 2rem;
-  margin: 1rem;
+  background-color: #8fbc8f;
+  margin: 2.2rem 0;
   padding: 1rem 1.3rem;
 }
 
-//favorites button___________________________________________
+#listings-search-results > h2 {
+  color:#398378;
+  margin: 3%;
+  -webkit-text-stroke: 1px #183153;
+  font-family: "Young Serif", serif;
+  font-size: 3rem;
+}
+
+.listing-tile {
+  border:#398378 10px solid;
+  padding: 2%;
+  width: 90%;
+  border-radius: 2rem;
+  background-color: white;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-tile > img {
+  width: 25%;
+  align-self: center;
+  border: #398378 solid 5px;
+}
+
+// Favorites button
+
 .favorite-button {
-  display: inline-block;
+  margin-top: 2%;
   cursor: pointer;
-  position: relative;
-  top: -35px;
-  
 }
 
-.heart-icon {
-  font-size: 24px;
-  color: red;
-  transition: color 0.3s;
-}
-
-.heart-icon.favorite {
-  color: goldenrod; /* Change to your desired color for the "favorited" state */
+/* Change cursor to pointer on hover for user feedback */
+.favorite-button:hover {
+  cursor: pointer;
 }
 
 .text {
@@ -85,7 +118,4 @@ main {
   font-weight: bold;
 }
 
-/* Change cursor to pointer on hover for user feedback */
-.favorite-button:hover {
-  cursor: pointer;
-}
+// logic
