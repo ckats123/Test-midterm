@@ -12,12 +12,12 @@ router.get("/", (req, res) => {
       .getSellerAccountInfo(req.cookies["email"])
       .then((data) => {
         const userInfo = data[0];
-        listings.getListingsBySeller(userInfo["id"]).then((myListings) => {
+        listings.getListingsBySeller(userInfo.user_id).then((myListings) => {
           transactions
-            .getSellerTransactionLog(userInfo.id)
+            .getSellerTransactionLog(userInfo.user_id)
             .then((mySalesLog) => {
               transactions
-                .getBuyerTransactionLog(userInfo.id)
+                .getBuyerTransactionLog(userInfo.user_id)
                 .then((myBuyLog) => {
                   reviews
                     .getReviewsForMultipleTransactions(mySalesLog)
