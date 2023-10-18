@@ -15,7 +15,10 @@ const getAllListings = () => {
 };
 
 const getListingById = (id) => {
-  const query = "SELECT * FROM listings WHERE id=$1";
+  const query = `SELECT * FROM listings
+  JOIN users ON seller_id = users.id
+  JOIN sellers_info ON sellers_info.user_id = users.id
+  WHERE listings.id=$1`;
   return db.query(query, [id]).then((data) => {
     return data.rows;
   });
