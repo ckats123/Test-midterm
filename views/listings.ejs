@@ -79,11 +79,12 @@
           <!--listing details-->
           <div class="details">
             <h2><%= listing.title %></h2>
-            <p>Price: $<%= listing.price %></p>
-            <p>Description: <%= listing.description %></p>
-            <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
-            <p>Date Listed: <%= listing.date_listed %></p>
-            <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+            <h3>Offered by:</h3> <span><%= listing.name %></span>
+            <p><h3>Price:</h3> $<%= listing.price %></p>
+            <p><h3>Description:</h3> <%= listing.description %></p>
+            <p><h3>Details:</h3> <a href="/listings/<%= listing.id %>">Read more</a></p>
+            <p>Date Listed: <%= new Date(listing.date_listed).toLocaleDateString() %></p>
+            <p>Available?: <%= listing.is_active ? 'Yes!' : 'Sold Out' %></p>
           </div>
         </div>
       <% }); %>
