@@ -4,10 +4,28 @@ const listings = require("../db/queries/functions/listings");
 
 // /listings search results page
 router.get("/", (req, res) => {
-  let searchTerm = req.query["search-term"] || "";
+  let searchTerm = req.query["search-term"] || "%";
+  let searchDescription = req.query["description"] || "%";
+  let searchSeller = req.query["seller-name"] || "%";
+  let searchMinPrice = req.query["price-slider-min"] || 0;
+  let searchMaxPrice = req.query["price-slider-max"] || 1000;
+
+  // Non exact matching
+  if (searchTerm) searchTerm = `%${searchTerm}%`;
+  if (searchDescription) searchDescription = `%${searchDescription}%`;
+  if (searchSeller) searchSeller = `%${searchSeller}%`;
+
+  const completeSearchTerm = {
+    searchTerm,
+    searchDescription,
+    searchSeller,
+    searchMinPrice,
+    searchMaxPrice
+  }
+  console.log(completeSearchTerm);
 
   listings
-    .getListingSearchResults(searchTerm)
+    .getListingSearchResults(completeSearchTerm)
     .then((allListings) => {
       res.render("listings", { listings: allListings });
     })
