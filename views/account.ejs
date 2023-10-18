@@ -62,6 +62,7 @@
         <h2>Transactions Log</h2>
         <table>
           <tr>
+            <th>ID</th>
             <th>Seller</th>
             <th>Buyer</th>
             <th>Purchase Date</th>
@@ -69,6 +70,9 @@
           </tr>
               <% mySalesLog.forEach(transaction => { %>
                 <tr>
+                <td>
+                  <%= transaction.id %>
+                </td>
                 <td>
                   <%= transaction.seller_id %>
                 </td>
@@ -85,6 +89,9 @@
               <% }); %>
               <% myBuyLog.forEach(transaction => { %>
                 <tr>
+                <td>
+                  <%= transaction.id %>
+                </td>
                 <td>
                   <%= transaction.seller_id %>
                 </td>
