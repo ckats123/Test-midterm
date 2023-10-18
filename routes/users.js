@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
   } else {
     // Seller logic
     users.addSellerUser(submittedDetails).then((createdUser) => {
-      console.log("Created Seller User:", createdUser);
+      console.log("Created Seller User:", createdUser.rows);
     })
     .catch((error) => {
       console.error("Error creating seller user:", error);
