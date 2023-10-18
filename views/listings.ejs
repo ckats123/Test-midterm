@@ -24,20 +24,21 @@
 </head>
 <body>
   <%- include('partials/nav') %>
-  <header>
-    <h1>Hire Expert Programmers for any job</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
+  <header id="listings-header">
+    <img src="./images/listings.png" alt="people searching with telescopes">
+    <h1>Looking for a programmer? Connect with independent talent today!</h1>
   </header>
 
-  <main>
+  <main id="listings-main">
     <!--search parameters section-->
     <section id="search-listings">
-      <h2 id="searchbar-title">Search</h2>
+      <h2 id="searchbar-title">Advanced Search</h2>
       <form action="/listings" method="GET">
-        <input type="search" id="search-term" name="search-term" placeholder="Search service listings here...">
+        <input type="search" id="search-term" name="search-term" placeholder="Search listings...">
+        <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         <!--price slider-->
         <div class="price-range-slider">
-            <p><label for="price-slider">Maximum Price:</label></p>
+            <label for="price-slider">Maximum Price:</label>
             <input type="range" min="0" max="1000" value="1000" step="10" id="price-slider" name = "price-slider"
               oninput="document.getElementById('price-display').textContent = '$' + this.value;">
             <span id="price-display">$1000</span>
@@ -47,20 +48,19 @@
     </section>
 
     <section id="listings-search-results">
-      <h2>listings results section</h2>
-      <p>search results for listings will render here</p>
+      <h2>Results</h2>
       <% listings.forEach(listing => { %>
-        <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+        <div class="listing-tile">
           <img src = <%= listing.photo_url %>>
-          
+
           <!--favorite listing toggle button-->
-          <div class="favorite-button">
-            <form id="favorite-listing-form" action="/favorite-listing" method="POST">
-              <span class="heart-icon">&#10084;</span>
-              <span class="text">Add to Favorites</span>
-            </form>
-          </div>
-          
+          <button id="favorite-button" action="/favorite-listing" method="POST">
+            <i class="fa-regular fa-heart" style="color: #1e3050;"></i>
+            <i class="fa-solid fa-heart" style="color: #1e3050;"></i>
+            <p class="add">Add to Favorites</p>
+            <p class="added">Added to Favorites</p>
+          </button>
+
           <!--listing details-->
           <h2><%= listing.title %></h2>
           <p>Price: $<%= listing.price %></p>
@@ -76,10 +76,3 @@
   <%- include('partials/footer') %>
 </body>
 </html>
-
-
-
-
-
-
-
