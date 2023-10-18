@@ -34,11 +34,9 @@
 #searchbar-title {
   text-align: center;
   font-family: "Young Serif", serif;
-  font-weight:900;
   font-size: 3rem;
-  color: #8fbc8f;
+  color: white;
   margin: 1%;
-  -webkit-text-stroke: 1px #183153;
 }
 
 #search-term {
@@ -77,18 +75,16 @@
 }
 
 #listings-search-results > h2 {
-  color:#398378;
+  color: white;
   margin: 3%;
-  -webkit-text-stroke: 1px #183153;
-  font-family: "Young Serif", serif;
   font-size: 3rem;
+  font-family: "Young Serif", serif;
 }
 
 .listing-tile {
   border:#398378 10px solid;
   padding: 2%;
   width: 90%;
-  border-radius: 2rem;
   background-color: white;
   margin-bottom: 2%;
   display: flex;
@@ -98,7 +94,11 @@
 .listing-tile > img {
   width: 25%;
   align-self: center;
-  border: #398378 solid 5px;
+}
+
+.details {
+  width: 70%;
+  align-self: center;
 }
 
 // Favorites button
@@ -106,6 +106,20 @@
 .favorite-button {
   margin-top: 2%;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  align-self: center;
+  background-color: #183153;
+  color: white;
+  border-radius: 25px;
+}
+
+.favorite-button > i {
+  margin-left: 8%;
+  color: white;
 }
 
 /* Change cursor to pointer on hover for user feedback */
@@ -118,4 +132,6 @@
   font-weight: bold;
 }
 
-// logic
+.added {
+  display: none;
+}
