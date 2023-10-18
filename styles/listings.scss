@@ -44,6 +44,12 @@
   margin-bottom: 1.5rem;
 }
 
+.description-field, .seller-name-field {
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+}
+
 .price-range-slider {
   width: 500px;
   margin: 0 auto;
@@ -55,7 +61,7 @@
   margin-bottom: 0;
 }
 
-#price-slider[type="range"] {
+#price-slider-max[type="range"], #price-slider-min {
   width: 100%;
   accent-color: #f6836b;
 }
