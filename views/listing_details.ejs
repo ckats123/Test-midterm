@@ -63,7 +63,7 @@
               <form class = "listing-contact-form" action="mailto:<%= listing.email %>" method="GET">
                 <h3>Contact me now:</h3>
                 <h4>Your subject:</h4>
-                <input name="subject" type="text" placeholder="Your Subject" />
+                <input name="subject" type="text" placeholder="Your Subject" value="<%= listing.title %>" />
                 <h4>Your message:</h4>
                 <textarea name="body" placeholder="Your Message"></textarea>
                 <input type="submit" value="Send Email" />
