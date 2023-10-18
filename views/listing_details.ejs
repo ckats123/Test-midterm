@@ -1,41 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listing details page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/listings.css" />
+    <link rel="stylesheet" href="/styles/listing_details.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <%- include('partials/nav') %>
-  <header>
-    <h1>Hire expert Programmers for any job</h1>
-    <img src="../images/home.png" alt="image of woman on computer">
-  </header>
-  <main>
-    <p>Listing id: <%= listing.id %></p>
-    <p>Listing seller id: <%= listing.seller_id %></p>
-    <p>Listing title: <%= listing.title %></p>
-    <p>Listing price: <%= listing.price %></p>
-    <p>Listing description: <%= listing.description %></p>
-    <p>Listing date listed: <%= listing.date_listed %></p>
-    <p>Listing active?: <%= listing.is_active %></p>
-  </main>
-  <%- include('partials/footer') %>
-</body>
+    <script
+      src="https://kit.fontawesome.com/21c6db8c84.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+    <header>
+      <h1>Hire expert Programmers for any job</h1>
+      <img src="../images/home.png" alt="image of woman on computer" />
+    </header>
+    <main>
+      <section id="listings-search-results">
+          <div class="listing-tile" id="listing-<%= listing.id %>">
+            <img src = <%= listing.photo_url %>>
+            <!--favorite listing toggle button-->
+            <button class="favorite-button" action="/favorite-listing" method="POST">
+              <p class="add">Add to Favorites</p>
+              <p class="added">Added to Favorites</p>
+              <i class="fa-solid fa-heart"></i>
+            </button>
+
+            <!--listing details-->
+            <div class="details">
+              <h2><%= listing.title %></h2>
+              <h3>Offered by:</h3> <span><%= listing.name %></span>
+              <p><h4>Price:</h4> $<%= listing.price %></p>
+              <p><h4>Description:</h4> <%= listing.description %></p>
+              <p><h4>Seller's location:</h4> <%= listing.location %></p>
+              <p><h4>Date Listed:</h4> <%= new Date(listing.date_listed).toLocaleDateString() %></p>
+              <h4>Listing data:</h4>
+              <p>Listing id: <%= listing.id %></p>
+              <p>Seller's id: <%= listing.seller_id %></p>
+              <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+              <form class = "listing-contact-form" action="mailto:<%= listing.email %>" method="GET">
+                <h3>Contact me now:</h3>
+                <h4>Your subject:</h4>
+                <input name="subject" type="text" placeholder="Your Subject" value="<%= listing.title %>" />
+                <h4>Your message:</h4>
+                <textarea name="body" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Email" />
+              </form>
+            </div>
+          </div>
+      </section>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
 </html>
