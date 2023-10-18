@@ -5,6 +5,7 @@ function handleQueryError(error) {
   throw error;
 }
 
+// GET requests
 const getUsers = () => {
   return db
     .query("SELECT * FROM users;")
@@ -30,10 +31,57 @@ const getSellerAccountInfo = (email) => {
   return db
     .query(
       "SELECT * FROM users JOIN sellers_info ON users.id = sellers_info.user_id WHERE email = $1;",
-      [email],
+      [email]
     )
     .then((data) => data.rows)
     .catch(handleQueryError);
 };
 
-module.exports = { getUsers, getUserByEmail, getUserPassword, getSellerAccountInfo };
+// POST requests
+const addBuyerUser = (submittedDetails) => {
+  console.log("Running buyer logic now.", submittedDetails);
+  const query = `INSERT INTO users (username, password, name, email, is_seller) VALUES ($1, $2, $3, $4, $5) RETURNING *;`;
+  return db
+    .query(query, [
+      submittedDetails.username,
+      submittedDetails.password,
+      submittedDetails.name,
+      submittedDetails.email,
+      false,
+    ])
+    .then((createdUser) => {
+      return createdUser.rows[0];
+    });
+};
+
+const addSellerUser = (submittedDetails) => {
+  console.log("Running seller logic now.", submittedDetails);
+  const query = `INSERT INTO users (username, password, name, email, is_seller) VALUES ($1, $2, $3, $4, $5) RETURNING id;`;
+  return db
+    .query(query, [
+      submittedDetails.username,
+      submittedDetails.password,
+      submittedDetails.name,
+      submittedDetails.email,
+      true,
+    ])
+    .then((createdUser) => {
+      console.log(createdUser);
+      const userId = createdUser.rows[0].id;
+      const sellerTableQuery = `INSERT INTO sellers_info (user_id, photo_url, location) VALUES ($1, $2, $3) RETURNING *;`;
+      return db.query(sellerTableQuery, [
+        userId,
+        submittedDetails.photo_url,
+        submittedDetails.location,
+      ]);
+    });
+};
+
+module.exports = {
+  getUsers,
+  getUserByEmail,
+  getUserPassword,
+  getSellerAccountInfo,
+  addBuyerUser,
+  addSellerUser,
+};
