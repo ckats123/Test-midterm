@@ -62,6 +62,10 @@
   background-color: #398378;
 }
 
+label {
+  align-items: start;
+}
+
 .social-icons {
   margin: 10px auto;
   text-align: center;
@@ -85,7 +89,7 @@
 
 .input-field {
   width: 100%;
-  padding: 7px 0;
+  padding: 7px 1px;
   margin: 3px 0;
   border-left: 0;
   border-top: 0;
@@ -109,11 +113,12 @@
 }
 
 .check-box {
-  margin: 0px 0px 0px 0;
+  margin: 5px 4px 3px 0;
 }
 
 #seller {
   font-size: 15px;
+  margin-right: 4px;
 }
 
 #terms-and-conditions {
@@ -125,6 +130,7 @@ span #rmb-me {
   font-size: 12px;
   bottom: 68px;
   position: absolute;
+  padding: 0.5px 0.5px 0px 0px;
 }
 
 #login-form {
