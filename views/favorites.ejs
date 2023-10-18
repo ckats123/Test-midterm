@@ -26,54 +26,33 @@
 </head>
 <body>
   <%- include('partials/nav') %>
-  <header>
-    <h1>My Favorited Listings </h1>
-    <!--header big heart emoji-->
-    <h1>&#10084;&#65039;</h1>
-
+  <header id="favorites-header">
+    <img src="./images/favorite.png" alt="woman at computer">
   </header>
   <main>
-    <!--heart emojis-->
-    <h3>&#128154; &#128154; &#128154; &#128154; &#128154;</h3>
-
     <!--Logic for favorites list-->
     <section id="favorited-listings">
-      <p>favorited listings will render here</p>
-
+      <h2><%- username %> <i class="fa-solid fa-heart" style="color: #f6836b"></i>'s</h2>
       <% favorites.forEach(listing => { %>
-        <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
+        <div class="listing-tile">
           <img src = <%= listing.photo_url %>>
-          <h2><%= listing.title %></h2>
-          <p>Price: $<%= listing.price %></p>
-          <p>Description: <%= listing.description %></p>
-          <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
-          <p>Date Listed: <%= listing.date_listed %></p>
-          <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+          <!--favorite listing toggle button-->
+          <button class="favorite-button" action="/favorite-listing" method="POST">
+            <p class="add">Add to Favorites</p>
+            <p class="added">Added to Favorites</p>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+
+          <div class="details">
+            <h2><%= listing.title %></h2>
+            <p>Price: $<%= listing.price %></p>
+            <p>Description: <%= listing.description %></p>
+            <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+            <p>Date Listed: <%= listing.date_listed %></p>
+            <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+          </div>
         </div>
       <% }); %>
-
-
-      <!--placeholdercontainer for single listing data-->
-      <!-- <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
-        <img src ="https://placehold.co/100">
-        <h2>listing.title</h2>
-        <p>Price: listing.price</p>
-        <p>Description: listing.description</p>
-        <p>Details: <a href="/listings/listing.id">Read more</a></p>
-        <p>Date Listed: listing.date_listed</p>
-        <p>Is Active: listing.is_active ? 'Yes' : 'No'</p>
-      </div>
-
-      <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
-        <img src ="https://placehold.co/100">
-        <h2>listing.title</h2>
-        <p>Price: listing.price</p>
-        <p>Description: listing.description</p>
-        <p>Details: <a href="/listings/listing.id">Read more</a></p>
-        <p>Date Listed: listing.date_listed</p>
-        <p>Is Active: listing.is_active ? 'Yes' : 'No'</p>
-      </div> -->
-
     </section>
 
   </main>

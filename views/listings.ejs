@@ -48,26 +48,27 @@
     </section>
 
     <section id="listings-search-results">
-      <h2>Results</h2>
+      <h2>Results :</h2>
       <% listings.forEach(listing => { %>
-        <div class="listing-tile">
+        <div class="listing-tile" id="listing-<%= listing.id %>">
           <img src = <%= listing.photo_url %>>
 
           <!--favorite listing toggle button-->
-          <button id="favorite-button" action="/favorite-listing" method="POST">
-            <i class="fa-regular fa-heart" style="color: #1e3050;"></i>
-            <i class="fa-solid fa-heart" style="color: #1e3050;"></i>
+          <button class="favorite-button" action="/favorite-listing" method="POST">
             <p class="add">Add to Favorites</p>
             <p class="added">Added to Favorites</p>
+            <i class="fa-solid fa-heart"></i>
           </button>
 
           <!--listing details-->
-          <h2><%= listing.title %></h2>
-          <p>Price: $<%= listing.price %></p>
-          <p>Description: <%= listing.description %></p>
-          <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
-          <p>Date Listed: <%= listing.date_listed %></p>
-          <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+          <div class="details">
+            <h2><%= listing.title %></h2>
+            <p>Price: $<%= listing.price %></p>
+            <p>Description: <%= listing.description %></p>
+            <p>Details: <a href="/listings/<%= listing.id %>">Read more</a></p>
+            <p>Date Listed: <%= listing.date_listed %></p>
+            <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+          </div>
         </div>
       <% }); %>
     </section>
