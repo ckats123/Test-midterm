@@ -36,9 +36,9 @@
       <h1>Find your mentor online.</h1>
     </header>
 
-    <section id="login-container">
+    <!-- <section id="login-container">
       <h1>Login</h1>
-      <!-- login form  -->
+      login form
       <form action="/login" method="POST">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
@@ -49,7 +49,7 @@
           <button id="sign-up-button" type="submit">Login</button>
 
       </form>
-    </section>
+    </section> -->
     </div>
 
     <div class="forms-container">
@@ -84,15 +84,17 @@
         </div>
         <form action="/login" method="POST" id="login-form" class="input-group">
           <input
-            type="text"
+            type="email"
             class="input-field"
-            placeholder="Username"
+            placeholder="E-mail Address"
+            name="email"
             required
           />
           <input
-            type="text"
+            type="password"
             class="input-field"
             placeholder="Enter Password"
+            name="password"
             required
           />
           <input type="checkbox" class="check-box" /><span id="rmb-me"
@@ -101,7 +103,7 @@
           <button type="submit" class="submit-btn">Login</button>
         </form>
         <form
-          action="/register"
+          action="/users"
           method="POST"
           id="register-form"
           class="input-group"
@@ -110,41 +112,51 @@
             type="text"
             class="input-field"
             placeholder="Username"
+            name="username"
             required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Enter Password"
+            name="password"
+            required
+          />
+          <input
+          type="text"
+          class="input-field"
+          placeholder="Your Name"
+          name="name"
+          required
           />
           <input
             type="email"
             class="input-field"
             placeholder="Email"
-            required
-          />
-          <input
-            type="text"
-            class="input-field"
-            placeholder="Enter Password"
-            required
-          />
-          <input
-            type="text"
-            class="input-field"
-            placeholder="Enter your city"
-            required
-          />
-          <input
-            type="text"
-            class="input-field"
-            placeholder="Enter your province/state"
+            name="email"
             required
           />
           <input
             type="checkbox"
             class="toggle-buyer-seller"
             id="seller"
-            name="seller"
+            name="is_seller"
             value="true"
-          /><span id="buyer-seller">I am a seller</span>
+          /><span id="buyer-seller">I want to list my services</span>
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Enter your city"
+            name="location"
+          />
+          <input
+          type="text"
+          class="input-field"
+          placeholder="Link to profile picture"
+          name="photo_url"
+        />
           <input type="checkbox" class="check-box" /><span
-            id="terms-and-conditions"
+            id="terms-and-conditions" required
             >I agree to the terms & conditions</span
           >
           <button type="submit" class="submit-btn">Register</button>
