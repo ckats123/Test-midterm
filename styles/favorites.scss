@@ -1,26 +1,101 @@
-header {
-  height: 40vh;
-}
+// Header
 
-body {
+#favorites-header {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2%;
+  margin-bottom: 4%;
 }
 
-main {
-  flex: 1;
-  /* Add styles for your main content here */
+#favorites-header > img {
+  margin: 2%;
 }
+
+// Listings
 
 #favorited-listings {
-  border: 15px solid #398378;
   border-radius: 1.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
+  background-color: #398378;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#favorited-listings > h2 {
+  background-color: #8fbc8f;
+  border-radius: 8px;
+  color: white;
+  padding: 3%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+#favorited-listings > h2 > i {
+  margin-left: 2%;
 }
 
 .listing-tile {
-  width: 80vw;
+  border: 10px solid #8fbc8f;
+  padding: 2%;
+  width: 90%;
+  background-color: white;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.listing-tile > img {
+  width: 25%;
+  align-self: center;
+}
+
+.details {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+
+// Favorites button
+
+.favorite-button {
+  margin-top: 2%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  align-self: center;
+  background-color: #183153;
+  color: white;
+  border-radius: 25px;
+}
+
+.favorite-button > i {
+  margin-left: 8%;
+  color: white;
+}
+
+/* Change cursor to pointer on hover for user feedback */
+.favorite-button:hover {
+  cursor: pointer;
+}
+
+.text {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.added {
+  display: none;
 }
