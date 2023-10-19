@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-const insertRoutes = require('./routes/insert')
+const insertRoutes = require('./routes/insert');
 
 const listingApiRoutes = require('./routes/listings-api');
 const loginRoutes = require('./routes/login');
@@ -53,6 +53,7 @@ const listingsRoutes = require('./routes/listings');
 const favoritesRoutes = require('./routes/favorites');
 const accountRoutes = require('./routes/account');
 const createListingRoutes = require('./routes/create-listing');
+const updateRoutes = require('./routes/update');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -69,6 +70,7 @@ app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
 app.use('/create-listing', createListingRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
