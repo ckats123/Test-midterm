@@ -145,6 +145,11 @@
 
 .transaction-log > table > tbody > tr {
   margin-top: 4%;
+  text-align: center;
+}
+
+.transaction-log > table > tbody > th {
+  text-align: center;
 }
 
 .new-transaction-modal {
@@ -156,7 +161,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
