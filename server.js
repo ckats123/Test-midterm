@@ -44,6 +44,7 @@ app.use((req, res, next) => {
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const insertRoutes = require('./routes/insert')
 
 const listingApiRoutes = require('./routes/listings-api');
 const loginRoutes = require('./routes/login');
@@ -59,6 +60,7 @@ const createListingRoutes = require('./routes/create-listing');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/insert', insertRoutes);
 
 app.use('/api/listings', listingApiRoutes);
 app.use('/login', loginRoutes);
