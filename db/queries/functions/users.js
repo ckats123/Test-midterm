@@ -70,6 +70,11 @@ const isListingInFavorites = (user_id, listing_id) => {
     });
 };
 
+const updateActiveListing = (listing_id) => {
+  const query = `
+    UPDATE listings SET is_active= false WHERE id= $1`;
+  return db.query(query, [listing_id])
+};
 
 const addSellerUser = (submittedDetails) => {
   console.log("Running seller logic now.", submittedDetails);
@@ -102,5 +107,6 @@ module.exports = {
   addBuyerUser,
   addSellerUser,
   addFavorite,
-  isListingInFavorites
+  isListingInFavorites,
+  updateActiveListing
 };
