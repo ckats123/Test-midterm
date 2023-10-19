@@ -127,7 +127,7 @@
               <p><strong>Date Listed:</strong> <%= listing.date_listed %></p>
               <p><strong>Is Active:</strong> <%= listing.is_active ? 'Yes' : 'No' %></p>
               <form class="form-sold" action="/update" method="POST">
-                <button class="active-button" action="/is-active" method="POST">
+                <button type="submit" class="active-button">
                 <p class="active">Active</p>
                 <p class="sold">SOLD!</p>
               </button>
