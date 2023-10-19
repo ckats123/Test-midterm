@@ -70,6 +70,7 @@ app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
 app.use('/create-listing', createListingRoutes);
+app.use('/update', updateRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
