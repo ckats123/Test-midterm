@@ -20,6 +20,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/transactions.js"></script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
@@ -60,6 +61,7 @@
       <!--Transaction Log-->
       <section class="transaction-log">
         <h2>Transactions Log</h2>
+        <button id="newTransactionButton">New Transaction</button>
         <table>
           <tr>
             <th>ID</th>
@@ -80,7 +82,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>
@@ -99,7 +101,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>
@@ -131,12 +133,31 @@
               <p><strong>Price:</strong> $<%= listing.price %></p>
               <p><strong>Description:</strong> <%= listing.description %></p>
               <p><a href="/listings/<%= listing.id %>">Go to listing</a></p>
-              <p><strong>Date Listed:</strong> <%= listing.date_listed %></p>
+              <p><strong>Date Listed:</strong> <%= listing.date_listed.toLocaleDateString() %></p>
               <p><strong>Is Active:</strong> <%= listing.is_active ? 'Yes' : 'No' %></p>
             </div>
           <% }); %>
         </ul>
       </section>
+        <!-- Modal new transaction form -->
+      <div class="new-transaction-modal">
+        <div class = "transaction-modal-content">
+          <span class="closeModal">&times;</span>
+          <h2>New Transaction</h2>
+          <form action="/transactions" method="POST" class="transaction-modal-form">
+            <label for="">Listing ID:</label>
+            <input type = "number" id="transaction_listing_id" name="transaction_listing_id" required>
+            <label for="">Buyer's Email:</label>
+            <input type = "email" id="buyer_email" name="buyer_email" required>
+            <label for="">Final Cost:</label>
+            <input type = "number" min="0" max="1000" id="final_cost" name="final_cost" required>
+            <label for="">Date Purchased:</label>
+            <input type = "date" id="purchase_date" name="purchase_date" required>
+            <button type="submit">Submit New Transaction</button>
+          </form>
+        </div>
+       </div>
+      <!-- Buyer logic -->
       <% } else { %>
       <section class="profile">
         <img src="../images/avatar-buyer.png" alt="default avatar">
@@ -170,7 +191,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>

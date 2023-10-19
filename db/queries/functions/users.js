@@ -37,6 +37,15 @@ const getSellerAccountInfo = (email) => {
     .catch(handleQueryError);
 };
 
+const getListingOwner = (listing_id) => {
+  return db.query(
+    "SELECT * FROM users JOIN listings ON users.id = seller_id WHERE listings.id = $1",
+    [listing_id]
+  )
+  .then ((data) => data.rows[0])
+  .catch(handleQueryError);
+};
+
 // POST requests
 const addBuyerUser = (submittedDetails) => {
   console.log("Running buyer logic now.", submittedDetails);
@@ -82,6 +91,7 @@ module.exports = {
   getUserByEmail,
   getUserPassword,
   getSellerAccountInfo,
+  getListingOwner,
   addBuyerUser,
   addSellerUser,
 };

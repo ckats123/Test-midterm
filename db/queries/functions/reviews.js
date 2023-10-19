@@ -15,7 +15,9 @@ const getReviewsForMultipleTransactions = (transactionList) => {
   // Populates an array of promises with query results for each transaction
   const promises = transactionList.map((transaction) => {
     return getReview(transaction.id).then((review) => {
-      reviewList.push(review);
+      if (review) {
+        reviewList.push(review);
+      }
     });
   });
   // Waits for all promises to resolve then returns array of results
