@@ -103,7 +103,13 @@
 
 // Favorites button
 
-.favorite-button {
+.button-form {
+  align-self: center;
+  width: 90%;
+  margin-left: 67%;
+}
+
+.button-form > .favorite-button {
   margin-top: 2%;
   cursor: pointer;
   display: flex;
