@@ -65,25 +65,10 @@
   text-align: center;
 }
 
-// Favorites button
-
-.favorite-button {
+.listing-tile > .fa-solid {
   margin-top: 2%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
+  color: white;
   align-self: center;
-  background-color: #183153;
-  color: white;
-  border-radius: 25px;
-}
-
-.favorite-button > i {
-  margin-left: 8%;
-  color: white;
 }
 
 /* Change cursor to pointer on hover for user feedback */
