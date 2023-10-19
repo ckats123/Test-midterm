@@ -51,6 +51,7 @@ const logoutRoutes = require('./routes/logout');
 const listingsRoutes = require('./routes/listings');
 const favoritesRoutes = require('./routes/favorites');
 const accountRoutes = require('./routes/account');
+const transactionsRoutes = require('./routes/transactions');
 const createListingRoutes = require('./routes/create-listing');
 
 // Mount all resource routes
@@ -66,6 +67,7 @@ app.use('/logout', logoutRoutes);
 app.use('/listings', listingsRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
+app.use('/transactions', transactionsRoutes);
 app.use('/create-listing', createListingRoutes);
 // Note: mount other resources here, using the same pattern above
 
