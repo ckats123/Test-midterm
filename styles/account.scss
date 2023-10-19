@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #183153;
+  background-color: #f6836b;
   width: 80%;
   padding: 4% 8%;
   border-radius: 10px;
@@ -221,4 +221,34 @@ ul > .listing-tile {
 
 .listing-tile > p {
   margin-left: 1%;
+}
+
+// Sold button
+.form-sold {
+  align-self: center;
+  width: 90%;
+  margin-left: 37%;
+}
+
+.form-sold > .active-button {
+  margin-bottom: 3%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  align-self: center;
+  background-color: #f6836b;
+  border-color: #f6836b;
+  color: white;
+  border-radius: 25px;
+}
+
+.active-button > i {
+  margin-left: 5%;
+}
+
+.sold {
+  display: none;
 }
