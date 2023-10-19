@@ -36,12 +36,7 @@
       <% favorites.forEach(listing => { %>
         <div class="listing-tile">
           <img src = <%= listing.photo_url %>>
-          <!--favorite listing toggle button-->
-          <button class="favorite-button" action="/favorite-listing" method="POST">
-            <p class="add">Add to Favorites</p>
-            <p class="added">Added to Favorites</p>
-            <i class="fa-solid fa-heart"></i>
-          </button>
+          <i class="fa-solid fa-heart" style="color: #f6836b"></i>
 
           <div class="details">
             <h2><%= listing.title %></h2>

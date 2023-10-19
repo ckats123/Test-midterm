@@ -63,6 +63,28 @@ const addBuyerUser = (submittedDetails) => {
     });
 };
 
+const addFavorite = (user_id, listing_id) => {
+  console.log("Adding to your favorites list!");
+  const query = `INSERT INTO favorites (user_id, listing_id) VALUES ($1, $2);`;
+  return db.query(query, [user_id, listing_id])
+};
+
+// Still working on figuring this one out...
+const isListingInFavorites = (user_id, listing_id) => {
+  const query = `
+    SELECT id FROM favorites WHERE user_id = $1 AND listing_id = $2;`;
+  return db.query(query, [user_id, listing_id])
+    .then(result => {
+      return result.rows.length === 0; // Return true when there are no matching rows
+    });
+};
+
+const updateActiveListing = (listing_id) => {
+  const query = `
+    UPDATE listings SET is_active= false WHERE id= $1`;
+  return db.query(query, [listing_id])
+};
+
 const addSellerUser = (submittedDetails) => {
   console.log("Running seller logic now.", submittedDetails);
   const query = `INSERT INTO users (username, password, name, email, is_seller) VALUES ($1, $2, $3, $4, $5) RETURNING id;`;
@@ -94,4 +116,7 @@ module.exports = {
   getListingOwner,
   addBuyerUser,
   addSellerUser,
+  addFavorite,
+  isListingInFavorites,
+  updateActiveListing
 };

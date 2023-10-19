@@ -70,11 +70,13 @@
           <img src = <%= listing.photo_url %>>
 
           <!--favorite listing toggle button-->
-          <button class="favorite-button" action="/favorite-listing" method="POST">
-            <p class="add">Add to Favorites</p>
-            <p class="added">Added to Favorites</p>
-            <i class="fa-solid fa-heart"></i>
-          </button>
+
+          <form class="button-form" action="/insert/<%= listing.id %>" id="listing-<%= listing.id %>" method="POST">
+            <button type="submit" class="favorite-button" >
+              <p class="add">Add to Favorites</p>
+              <p class="added">Added to Favorites</p>
+              <i class="fa-solid fa-heart"></i></button>
+          </form>
 
           <!--listing details-->
           <div class="details">
