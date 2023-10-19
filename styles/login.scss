@@ -3,6 +3,19 @@
   padding: 0;
 }
 
+#login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-h1 {
+  width: 50%;
+  display: flex;
+  text-align: center;
+  margin: 0%;
+}
+
 .forms-container {
   height: 100%;
   width: 100%;
