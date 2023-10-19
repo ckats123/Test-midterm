@@ -31,10 +31,6 @@ $(() => {
       console.log("SOLD!");
       sold.css("display", "block");
       active.css("display", "none");
-    } else if (sold.css("display") === "block") {
-      console.log("Active!");
-      sold.css("display", "none");
-      active.css("display", "block");
     }
   });
 });
