@@ -12,3 +12,5 @@ console.log('testing', req.params.listingId)
     res.status(500).json({ error: 'Failed to update.' });
   });
 });
+
+module.exports = router;
