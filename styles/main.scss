@@ -21,6 +21,12 @@ nav {
   color: white;
 }
 
+#login,
+#join {
+  border: white 2px solid;
+  padding: 1% 5%;
+}
+
 #logout-form > input {
   border: none;
   background-color: #398378;
