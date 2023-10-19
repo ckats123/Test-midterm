@@ -126,6 +126,12 @@
               <p><a href="/listings/<%= listing.id %>">Go to listing</a></p>
               <p><strong>Date Listed:</strong> <%= listing.date_listed %></p>
               <p><strong>Is Active:</strong> <%= listing.is_active ? 'Yes' : 'No' %></p>
+              <form class="form-sold" action="/update" method="POST">
+                <button class="active-button" action="/is-active" method="POST">
+                <p class="active">Active</p>
+                <p class="sold">SOLD!</p>
+              </button>
+              </form>
             </div>
           <% }); %>
         </ul>
