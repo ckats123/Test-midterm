@@ -82,7 +82,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>
@@ -101,7 +101,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>
@@ -133,7 +133,7 @@
               <p><strong>Price:</strong> $<%= listing.price %></p>
               <p><strong>Description:</strong> <%= listing.description %></p>
               <p><a href="/listings/<%= listing.id %>">Go to listing</a></p>
-              <p><strong>Date Listed:</strong> <%= listing.date_listed %></p>
+              <p><strong>Date Listed:</strong> <%= listing.date_listed.toLocaleDateString() %></p>
               <p><strong>Is Active:</strong> <%= listing.is_active ? 'Yes' : 'No' %></p>
             </div>
           <% }); %>
@@ -191,7 +191,7 @@
                   <%= transaction.buyer_id %>
                 </td>
                 <td>
-                  <%= transaction.purchase_date %>
+                  <%= transaction.purchase_date.toLocaleDateString() %>
                 </td>
                 <td>
                   <%= transaction.final_cost %>
