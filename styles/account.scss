@@ -123,6 +123,19 @@
   padding: 3% 5%;
 }
 
+// New transaction modal styling
+
+.transaction-log > button {
+  border-radius: 8px;
+  background-color: #398378;
+  border-color: #398378;
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 .transaction-log > table {
   background-color: white;
   padding: 2%;
@@ -133,6 +146,81 @@
 .transaction-log > table > tbody > tr {
   margin-top: 4%;
 }
+
+.new-transaction-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction-modal-content {
+  background-color:#398378;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  color: #fff; /* Text color for modal content */
+}
+
+.closeModal {
+  align-self: flex-end;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  background-color: #D11A2A;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Text color for close button */
+}
+
+.transaction-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.transaction-modal-form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.transaction-modal-form input {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.transaction-modal-form button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+/* Hover effect for the submit button */
+.transaction-modal-form button:hover {
+  background-color: #2575b7; /* Update hover color */
+}
+
 
 // Reviews
 
