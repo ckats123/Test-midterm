@@ -330,8 +330,7 @@ ul > .listing-tile {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  align-self: center;
+  width: 24%;
   background-color: #f6836b;
   border-color: #f6836b;
   color: white;
@@ -344,4 +343,24 @@ ul > .listing-tile {
 
 .sold {
   display: none;
+}
+
+.listing-tile > .active-button {
+  margin-bottom: 3%;
+  margin-left: 36%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 23%;
+  background-color: #f6836b;
+  border-color: #f6836b;
+  color: white;
+  border-radius: 25px;
+  padding: 2%;
+}
+
+.listing-tile > .active-button > p {
+  margin: 2%;
 }
