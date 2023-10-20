@@ -34,20 +34,20 @@
   <body>
     <%- include('partials/nav') %>
     <header>
-      <h1>Hire expert Programmers for any job</h1>
-      <img src="../images/home.png" alt="image of woman on computer" />
+      <h1 id="details-header">Unlock Excellence: Hire today!</h1>
+      <img src="../images/details.png" alt="image of hands with puzzle pieces" />
     </header>
     <main>
       <section id="listings-search-results">
           <div class="listing-tile" id="listing-<%= listing.id %>">
             <img src = <%= listing.photo_url %>>
             <!--favorite listing toggle button-->
-            <button class="favorite-button" action="/favorite-listing" method="POST">
-              <p class="add">Add to Favorites</p>
-              <p class="added">Added to Favorites</p>
-              <i class="fa-solid fa-heart"></i>
-            </button>
-
+            <form class="button-form" action="/insert/<%= listing.id %>" id="listing-<%= listing.id %>" method="POST">
+              <button type="submit" class="favorite-button" >
+                <p class="add">Add to Favorites</p>
+                <p class="added">Added to Favorites</p>
+                <i class="fa-solid fa-heart"></i></button>
+            </form>
             <!--listing details-->
             <div class="details">
               <h2><%= listing.title %></h2>
@@ -65,8 +65,8 @@
                 <h4>Your subject:</h4>
                 <input name="subject" type="text" placeholder="Your Subject" value="<%= listing.title %>" />
                 <h4>Your message:</h4>
-                <textarea name="body" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Email" />
+                <textarea class="text-area" name="body" placeholder="Your Message"></textarea>
+                <input class="send-button" type="submit" value="Send Email" />
               </form>
             </div>
           </div>

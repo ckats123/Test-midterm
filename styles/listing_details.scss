@@ -1,8 +1,34 @@
 .listing-contact-form {
   display:flex;
   flex-direction: column;
+  background-color: #183153;
+  color: white;
+  border-radius: 8px;
+  padding: 5%;
+}
+
+.listing-contact-form > h3 {
+  margin: 0%;
+}
+
+.listing-contact-form > .text-area {
+  resize: none;
 }
 
 section {
   width: 80%;
+}
+
+.listing-tile {
+  margin: 5% 0%;
+}
+
+.send-button {
+  background-color: #f6836b;
+  color: white;
+  margin-top: 3%;
+  width: 40%;
+  padding: 2%;
+  border-radius: 8px;
+  align-self: center;
 }
