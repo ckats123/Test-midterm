@@ -7,5 +7,6 @@ CREATE TABLE listings (
   price INTEGER NOT NULL DEFAULT 0,
   description TEXT NOT NULL,
   date_listed DATE NOT NULL,
-  is_active BOOLEAN NOT NULL DEFAULT TRUE
+  is_active BOOLEAN NOT NULL DEFAULT TRUE,
+  is_deleted BOOLEAN NOT NULL DEFAULT FALSE
 );
