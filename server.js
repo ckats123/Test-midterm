@@ -54,6 +54,7 @@ const favoritesRoutes = require('./routes/favorites');
 const accountRoutes = require('./routes/account');
 const transactionsRoutes = require('./routes/transactions');
 const createListingRoutes = require('./routes/create-listing');
+const deleteListingRoutes = require('./routes/delete-listing');
 const updateRoutes = require('./routes/update');
 const reviewRoutes = require('./routes/reviews.js');
 
@@ -73,6 +74,7 @@ app.use('/favorites', favoritesRoutes);
 app.use('/account', accountRoutes);
 app.use('/transactions', transactionsRoutes);
 app.use('/create-listing', createListingRoutes);
+app.use('/delete-listing', deleteListingRoutes);
 app.use('/update', updateRoutes);
 app.use('/reviews', reviewRoutes);
 
