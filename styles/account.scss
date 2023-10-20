@@ -389,6 +389,17 @@ ul > .listing-tile {
   padding: 1%;
   margin-top: 0%;
   width: 100%;
+  display:flex;
+  justify-content:left;
+}
+
+.delete-listing-button {
+  margin-left: auto;
+  border: none;
+}
+
+.fa-x-button:hover {
+  cursor: pointer;
 }
 
 .listing-tile > p {

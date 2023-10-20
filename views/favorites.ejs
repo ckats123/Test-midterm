@@ -34,6 +34,7 @@
     <section id="favorited-listings">
       <h2><%- username %> <i class="fa-solid fa-heart" style="color: #f6836b"></i>'s</h2>
       <% favorites.forEach(listing => { %>
+        <% if (!listing.is_deleted) { %>
         <div class="listing-tile">
           <img src = <%= listing.photo_url %>>
           <i class="fa-solid fa-heart" style="color: #f6836b"></i>
@@ -47,6 +48,7 @@
             <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
           </div>
         </div>
+        <% }; %>
       <% }); %>
     </section>
 
