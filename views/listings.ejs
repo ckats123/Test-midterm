@@ -66,6 +66,7 @@
     <section id="listings-search-results">
       <h2>Results :</h2>
       <% listings.forEach(listing => { %>
+        <% if (!listing.is_deleted) { %>
         <div class="listing-tile" id="listing-<%= listing.id %>">
           <img src = <%= listing.photo_url %>>
 
@@ -89,6 +90,7 @@
             <p>Available?: <%= listing.is_active ? 'Yes!' : 'Sold Out' %></p>
           </div>
         </div>
+        <% }; %>
       <% }); %>
     </section>
 

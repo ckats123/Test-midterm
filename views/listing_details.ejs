@@ -60,6 +60,9 @@
               <p>Listing id: <%= listing.id %></p>
               <p>Seller's id: <%= listing.seller_id %></p>
               <p>Is Active: <%= listing.is_active ? 'Yes' : 'No' %></p>
+              <% if (listing.is_deleted) { %>
+                <p style="color:red; font-size: 2rem;">THIS LISTING HAS BEEN DELETED</p>
+              <% }; %>
               <form class = "listing-contact-form" action="mailto:<%= listing.email %>" method="GET">
                 <h3>Contact me now:</h3>
                 <h4>Your subject:</h4>
