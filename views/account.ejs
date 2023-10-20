@@ -127,9 +127,17 @@
         <h2>My Listings</h2>
         <ul>
           <% myListings.forEach(listing => { %>
+            <% if (!listing.is_deleted) { %>
             <div class="listing-tile" style = "border: 1px solid black; margin: 5px; padding:5px">
               <img src = <%= listing.photo_url %>>
-              <h2><%= listing.title %> <i class="fa-solid fa-tag" style="color: #1e3050;"></i></h2>
+              <h2><%= listing.title %> <i class="fa-solid fa-tag" style="color: #1e3050;"></i>
+                <form class="delete-listing-button" action="/delete-listing" method="POST">
+                  <input type="hidden" id="listingId" name="listingId" value = "<%= listing.id %>">
+                  <button type="submit">
+                    <i class="fa-solid fa-x"></i>
+                  </button>
+                </form>
+              </h2>
               <p><strong>Price:</strong> $<%= listing.price %></p>
               <p><strong>Description:</strong> <%= listing.description %></p>
               <p><a href="/listings/<%= listing.id %>">Go to listing</a></p>
@@ -149,6 +157,7 @@
                 <% } %>
                 </form>
             </div>
+            <% }; %>
           <% }); %>
         </ul>
       </section>
