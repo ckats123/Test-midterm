@@ -28,38 +28,37 @@
 
   <%- include('partials/nav') %>
 
-  <header>
-    <h1>Create your listing!</h1>
-    <img src="./images/home.png" alt="image of woman on computer">
+  <header id="create-header">
+    <h1 id="create-h1">Create your listing today!</h1>
+    <img src="./images/create-listing.png" alt="image of woman creating something">
   </header>
 
-  <main>
+  <main id="create-main">
     <div id="create-listing-form-container">
-      
-      <h2>Make a listing for your Service!</h2>
+
+      <h2>Make a listing for your service!</h2>
       <hr>
       <br>
 <!--create-listing form______________________________________________________-->
-      <form action="/create-listing" method="POST"> 
+      <form action="/create-listing" method="POST">
         <label for="title">Title:</label>
          <!--title-->
         <input type="text" id="title" name="title" required><br><br>
 
         <label for="price">Price:</label>
         <!--price-->
-        <input type="number" id="price" name="price" step="0.01" required><br><br> 
+        <input type="number" id="price" name="price" step="0.01" required><br><br>
 
         <label for="description">Description:</label><br>
         <!--descriptions-->
-        <textarea id="description" name="description" rows="4" cols="50" required placeholder="details about your service listing here..."></textarea><br><br>
+        <textarea id="description" name="description" rows="4" cols="50" style="resize: none"></textarea><br><br>
 
         <button id="create-listing-button" type="submit">Create Listing</button>
       </form>
-
     </div>
   </main>
 
   <%- include('partials/footer') %>
-  
+
 </body>
 </html>
