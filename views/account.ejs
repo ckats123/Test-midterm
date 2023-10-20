@@ -21,6 +21,7 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/transactions.js"></script>
+  <script defer src="/scripts/reviews.js"></script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/21c6db8c84.js" crossorigin="anonymous"></script>
@@ -69,43 +70,42 @@
             <th>Buyer</th>
             <th>Purchase Date</th>
             <th>Amount</th>
+            <th>Review?</th>
           </tr>
               <% mySalesLog.forEach(transaction => { %>
                 <tr>
-                <td>
-                  <%= transaction.id %>
-                </td>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
+                  <td><%= transaction.id %></td>
+                  <td><%= transaction.seller_id %></td>
+                  <td><%= transaction.buyer_id %></td>
+                  <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+                  <td><%= transaction.final_cost %></td>
+                  <td>
+                    <% if (transaction.rating !== null) { %>
+                      <% for (let i = 1; i <= transaction.rating; i++) { %>
+                        <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                      <% } %>
+                    <% } else { %>
+                      <span>No review yet.</span>
+                    <% } %>
+                  </td>
                 </tr>
               <% }); %>
               <% myBuyLog.forEach(transaction => { %>
                 <tr>
-                <td>
-                  <%= transaction.id %>
-                </td>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
+                  <td><%= transaction.id %></td>
+                  <td><%= transaction.seller_id %></td>
+                  <td><%= transaction.buyer_id %></td>
+                  <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+                  <td><%= transaction.final_cost %></td>
+                  <td>
+                    <% if (transaction.rating !== null) { %>
+                      <% for (let i = 1; i <= transaction.rating; i++) { %>
+                        <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                      <% } %>
+                    <% } else { %>
+                      <button class="open-review-modal" onclick="openReviewModal('<%= transaction.id %>')">Write a Review</button>
+                    <% } %>
+                  </td>
                 </tr>
               <% }); %>
         </table>
@@ -190,30 +190,50 @@
         <h2>Transactions Log</h2>
         <table>
           <tr>
+            <th>ID</th>
             <th>Seller</th>
             <th>Buyer</th>
             <th>Purchase Date</th>
             <th>Amount</th>
+            <th>Review?</th>
           </tr>
-              <% myBuyLog.forEach(transaction => { %>
-                <tr>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
-                </tr>
-              <% }); %>
+          <% myBuyLog.forEach(transaction => { %>
+            <tr>
+              <td><%= transaction.id %></td>
+              <td><%= transaction.seller_id %></td>
+              <td><%= transaction.buyer_id %></td>
+              <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+              <td><%= transaction.final_cost %></td>
+              <td>
+                <% if (transaction.rating !== null) { %>
+                  <% for (let i = 1; i <= transaction.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                  <% } %>
+                <% } else { %>
+                  <button class="open-review-modal" onclick="openReviewModal('<%= transaction.id %>')">Write a Review</button>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
         </table>
       </section>
     <% }; %>
+    <div id="review-modal" class="modal">
+      <div class="review-modal-content">
+        <span class="close-review-modal" onclick="closeReviewModal()">&times;</span>
+        <h2>Write a Review</h2>
+        <form action="/reviews" method="POST" class="review-modal-form">
+          <!-- Add an input field to capture the transaction ID -->
+          <input type="hidden" id="transactionId" name="transactionId">
+          <label for="reviewRating">Your Rating:</label>
+          <input required type="range" min="1" max="5" value = "3" step="1" id="reviewRating" name="reviewRating" oninput="document.getElementById('ratingValue').textContent = this.value;">
+          <span id="ratingValue">3</span>
+          <label for="reviewText">Your Review:</label>
+          <textarea required id="reviewText" name="reviewText" rows="4" cols="50"></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
+    </div>
   </main>
   <%- include('partials/footer') %>
 </body>
