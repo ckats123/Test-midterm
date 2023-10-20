@@ -115,7 +115,11 @@
         <h2>Reviews</h2>
         <% myReviews.forEach(review => { %>
           <article>
-            <h3>Rating: <%= review.rating %> <i class="fa-solid fa-star" style="color: #1e3050;"></i></h3>
+            <h3>Rating: <%= review.rating %> <% if (review.rating !== null) { %>
+              <% for (let i = 1; i <= review.rating; i++) { %>
+                <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+              <% } %>
+            <% } %></h3>
             <p><strong>Listing:</strong> <a href="<%= '/listings/' + review.id %>"><%= review.title %></a></p>
             <p><strong>Message:</strong> <%= review.message %></p>
             <p><strong>Transaction number:</strong> <%= review.transaction_id %></p>
