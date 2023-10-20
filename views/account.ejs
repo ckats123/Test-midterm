@@ -69,43 +69,42 @@
             <th>Buyer</th>
             <th>Purchase Date</th>
             <th>Amount</th>
+            <th>Review?</th>
           </tr>
               <% mySalesLog.forEach(transaction => { %>
                 <tr>
-                <td>
-                  <%= transaction.id %>
-                </td>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
+                  <td><%= transaction.id %></td>
+                  <td><%= transaction.seller_id %></td>
+                  <td><%= transaction.buyer_id %></td>
+                  <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+                  <td><%= transaction.final_cost %></td>
+                  <td>
+                    <% if (transaction.rating !== null) { %>
+                      <% for (let i = 1; i <= transaction.rating; i++) { %>
+                        <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                      <% } %>
+                    <% } else { %>
+                      <span>No review yet.</span>
+                    <% } %>
+                  </td>
                 </tr>
               <% }); %>
               <% myBuyLog.forEach(transaction => { %>
                 <tr>
-                <td>
-                  <%= transaction.id %>
-                </td>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
+                  <td><%= transaction.id %></td>
+                  <td><%= transaction.seller_id %></td>
+                  <td><%= transaction.buyer_id %></td>
+                  <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+                  <td><%= transaction.final_cost %></td>
+                  <td>
+                    <% if (transaction.rating !== null) { %>
+                      <% for (let i = 1; i <= transaction.rating; i++) { %>
+                        <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                      <% } %>
+                    <% } else { %>
+                      <button>Write a Review</button>
+                    <% } %>
+                  </td>
                 </tr>
               <% }); %>
         </table>
@@ -190,27 +189,31 @@
         <h2>Transactions Log</h2>
         <table>
           <tr>
+            <th>ID</th>
             <th>Seller</th>
             <th>Buyer</th>
             <th>Purchase Date</th>
             <th>Amount</th>
+            <th>Review?</th>
           </tr>
-              <% myBuyLog.forEach(transaction => { %>
-                <tr>
-                <td>
-                  <%= transaction.seller_id %>
-                </td>
-                <td>
-                  <%= transaction.buyer_id %>
-                </td>
-                <td>
-                  <%= transaction.purchase_date.toLocaleDateString() %>
-                </td>
-                <td>
-                  <%= transaction.final_cost %>
-                </td>
-                </tr>
-              <% }); %>
+          <% myBuyLog.forEach(transaction => { %>
+            <tr>
+              <td><%= transaction.id %></td>
+              <td><%= transaction.seller_id %></td>
+              <td><%= transaction.buyer_id %></td>
+              <td><%= transaction.purchase_date.toLocaleDateString() %></td>
+              <td><%= transaction.final_cost %></td>
+              <td>
+                <% if (transaction.rating !== null) { %>
+                  <% for (let i = 1; i <= transaction.rating; i++) { %>
+                    <i class="fa-solid fa-star" style="color: #1e3050;"></i>
+                  <% } %>
+                <% } else { %>
+                  <button>Write a Review</button>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
         </table>
       </section>
     <% }; %>
