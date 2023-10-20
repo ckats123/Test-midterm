@@ -55,6 +55,7 @@ const accountRoutes = require('./routes/account');
 const transactionsRoutes = require('./routes/transactions');
 const createListingRoutes = require('./routes/create-listing');
 const updateRoutes = require('./routes/update');
+const reviewRoutes = require('./routes/reviews.js');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -73,6 +74,7 @@ app.use('/account', accountRoutes);
 app.use('/transactions', transactionsRoutes);
 app.use('/create-listing', createListingRoutes);
 app.use('/update', updateRoutes);
+app.use('/reviews', reviewRoutes);
 
 // Note: mount other resources here, using the same pattern above
 
