@@ -26,4 +26,22 @@ const getReviewsForMultipleTransactions = (transactionList) => {
   });
 };
 
-module.exports = { getReviewsForMultipleTransactions };
+// Create new review entry
+
+const postNewReview = (transaction_id, rating, message) => {
+  const query = `
+  INSERT INTO reviews (transaction_id, rating, message)
+  VALUES ($1, $2, $3)
+  RETURNING *;
+  `;
+  return db.query(query, [transaction_id, rating, message]).then((result) => {
+    const createdReview = result.rows[0];
+    return createdReview;
+  });
+};
+
+module.exports = {
+  getReview,
+  getReviewsForMultipleTransactions,
+  postNewReview,
+};
