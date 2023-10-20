@@ -90,10 +90,20 @@ const createNewListing = (
     });
 };
 
+const deleteListing = (listingId) => {
+  const query = `UPDATE listings SET is_deleted = true WHERE id = $1`
+  return db
+    .query(query, [listingId])
+    .then (() => {
+      console.log("Successfully deleted listing ", listingId)
+    })
+}
+
 module.exports = {
   getAllListings,
   getListingById,
   getListingSearchResults,
   getListingsBySeller,
   createNewListing,
+  deleteListing
 };
