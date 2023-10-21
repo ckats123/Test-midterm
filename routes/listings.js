@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const listings = require("../db/queries/functions/listings");
-const favorites = require("../db/queries/functions/favorites");
+const favorites = require("../db/queries/functions/users");
 
 // /listings search results page
 router.get("/", (req, res) => {
@@ -33,7 +33,7 @@ router.get("/", (req, res) => {
 
       // Create an array of promises for isListingFavorited calls
       const isFavoritedPromises = allListings.map((listing) => {
-        return favorites.isListingFavorited(req.cookies["user_id"], listing.id);
+        return favorites.isListingInFavorites(req.cookies["user_id"], listing.id);
       });
 
       // Wait for all promises to complete
