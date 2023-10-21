@@ -16,7 +16,7 @@ Programmer is a full stack web application built with Node and Express that conn
 #### Search and featured listings on home page
 
 !["Screenshot of home-page"](/docs/home_page.png)
-(![Search Bar Feature](<public/images/Screenshot 2023-10-21 at 11.18.29 AM.png>))
+![Search Bar Feature](<public/images/Screenshot 2023-10-21 at 11.18.29 AM.png>)
 ![Search Bar Feature V2](<public/images/Screenshot 2023-10-21 at 11.18.39 AM.png>)
 
 #### Advanced listings search
