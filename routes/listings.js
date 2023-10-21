@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const listings = require("../db/queries/functions/listings");
+const favorites = require("../db/queries/functions/favorites");
 
 // /listings search results page
 router.get("/", (req, res) => {
@@ -20,14 +21,34 @@ router.get("/", (req, res) => {
     searchDescription,
     searchSeller,
     searchMinPrice,
-    searchMaxPrice
-  }
+    searchMaxPrice,
+  };
   console.log(completeSearchTerm);
 
   listings
     .getListingSearchResults(completeSearchTerm)
     .then((allListings) => {
-      res.render("listings", { listings: allListings });
+      console.log(allListings);
+      console.log(req.cookies["user_id"]);
+
+      // Create an array of promises for isListingFavorited calls
+      const isFavoritedPromises = allListings.map((listing) => {
+        return favorites.isListingFavorited(req.cookies["user_id"], listing.id);
+      });
+
+      // Wait for all promises to complete
+      return Promise.all(isFavoritedPromises).then((isFavoritedResults) => {
+        // Now isFavoritedResults is an array of boolean values
+
+        // Combine the isFavorited information with each listing
+        allListings.forEach((listing, index) => {
+          listing.isFavorited = isFavoritedResults[index];
+        });
+
+        // Render the page with updated allListings
+        console.log("Updated all listings: ", allListings)
+        res.render("listings", { listings: allListings });
+      });
     })
     .catch((error) => {
       console.log(error);

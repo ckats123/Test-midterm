@@ -12,4 +12,15 @@ const getFavoritesByUserId = (userId) => {
   });
 };
 
-module.exports = { getFavoritesByUserId };
+const isListingFavorited = (userId, listingId ) => {
+  const query = `
+  SELECT * FROM favorites
+  WHERE user_id = $1
+  AND listing_id = $2
+  `
+  return db.query(query, [userId, listingId]).then ((data) => {
+    return data.rows;
+  })
+}
+
+module.exports = { getFavoritesByUserId, isListingFavorited };
