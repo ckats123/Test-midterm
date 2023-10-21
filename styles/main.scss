@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 nav {
@@ -57,7 +58,7 @@ a > .logo {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 50%;
+  width: 60%;
   font-size: 1.1rem;
 }
 
@@ -177,4 +178,63 @@ footer > p {
   transform: scale(1.3);
   color: #3ca77e;
   font-weight: bold;
+}
+
+// Search Bar Styling
+.box {
+  max-width: 400px;
+  width: 100%;
+  background: #398378;
+}
+
+.box .search-box {
+  position: relative;
+  height: 50px;
+  max-width: 50px;
+  background: #59a16d;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+#check:checked ~ .search-box {
+  max-width: 380px;
+}
+
+.search-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  background: #fff;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.search-box .icon {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 50px;
+  background: #fff;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  color: #59a16d;
+  font-size: 20px;
+  border-radius: 25px;
+}
+
+#check:checked ~ .search-box .icon {
+  background: #59a16d;
+  color: #fff;
+  width: 60px;
+  border-radius: 0 25px 25px 0;
+}
+
+#check {
+  display: none;
 }
