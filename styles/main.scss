@@ -41,6 +41,10 @@ form > .search-button {
   border: none;
 }
 
+form > .search-button:hover {
+  background-color: #3ca77e;
+}
+
 #left-nav {
   margin-left: 1%;
   display: flex;
